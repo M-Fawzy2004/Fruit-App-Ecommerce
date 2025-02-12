@@ -1,0 +1,106 @@
+{
+    "SplashView1": {
+      "title": "Welcome to",
+      "enTitle" : "Fruit",
+      "enTitle2" : "HUB",
+      "hintTitle": "Skip",
+      "description": "Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and high quality."
+    },
+  
+    "SplashView2": {
+      "title": "Search and Shop",
+      "description": "We offer you the finest carefully selected fruits. Check out details, images, and reviews to ensure you pick the perfect fruit.",
+      "buttonName": "Get Started"
+    },
+  
+    "Login": {
+      "appBartitle": "Login",
+      "emailText": "Email",
+      "passwordText": "Password",
+      "forgotPassword": "Forgot Password?",
+      "signIn": "Sign In",
+      "cotHaveAccount": "Don't have an account?",
+      "createAccount": "Create New Account",
+      "or": "OR",
+      "loginWithG": "Login with Google",
+      "loginWithF": "Login with Facebook",
+      "loginWithA": "Login with Apple"
+    },
+  
+    "SignUp": {
+      "appBartitle": "Sign Up",
+      "fullNameText": "Full Name",
+      "emailText": "Email",
+      "passwordText": "Password",
+      "agreeText1": "By creating an account, you agree to our",
+      "agreeText2": " Terms and Conditions",
+      "register": "Create Account",
+      "haveAccount": "Already have an account?",
+      "login": "Login"
+    },
+  
+    "ForgetPassword": {
+      "appBartitle": "Forgot Password",
+      "title": "Don’t worry, just enter your phone number, and we’ll send you a verification code.",
+      "send": "Forgot Password"
+    },
+  
+    "PasswordRecovery": {
+      "title": "Enter the code we sent to the following emailMaxxx@email.com",
+      "verify": "Verify Code",
+      "resendCode": "Resend Code"
+    },
+  
+    "ResetYourPassword": {
+      "title": "Create a new password to log in",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "save": "Create New Password"
+    },
+  
+    "ChangePassword": {
+      "title": "Password Changed Successfully"
+    },
+
+    "Validation" : {
+    "required" : "The field is required",
+    "buildSnakBar" : "Terms and Conditions must be agreed to."
+    },
+
+    "FirbaseExecption" : {
+      "serverFailure" : "an error occured, please try again",
+      "noCompleted" : "Registration not complete? That's okay, you can come back anytime! 😉",
+      "weakPassword" : "The password provided is too weak",
+      "emailAlreadyInUse" : "The account already exists for that email",
+      "userNotFound" : "The email or password is incorrect",
+      "tooManyRequests" : "Too many requests, please try again later",
+      "wrongPassword" : "The email or password is incorrect",
+      "networkRequestFailed" : "No internet connection 🌐❎",
+      "signupSuccess" : "Registration Successful! ✨ Get ready to discover a new world of features!",
+      "loginSuccess" : "Registration Successful! ✨ Get ready to discover a new world of features!"
+    },
+
+    "Loading" : {
+      "waiting" : "One moment please ...",
+      "createTextAccount" : "Your account is being created",
+      "loginTextAccount" : "Logging in your account",
+      "error" : "An error occurred, please try again."
+    },
+
+    "Deleting":{
+      "title" : "The account has been successfully deleted",
+      "subtitle" : "Currently there is no user logged in ",
+      "error" : "Error deleting user, please try again."
+    },
+
+    "HomeView" :{
+      "textAppBar" : "Good morning ..!",
+      "textSearch" : "Search for products...",
+      "eidOffers" : "Eid Offers",
+      "discount" : "25% Discount",
+      "shopNow" : "ShopNow",
+      "bestSeller" : "Best Seller",
+      "more" : "More"
+    }
+  }
+  
