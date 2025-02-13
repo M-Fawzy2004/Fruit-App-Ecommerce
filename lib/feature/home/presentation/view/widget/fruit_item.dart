@@ -1,9 +1,12 @@
+import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class FruitItem extends StatelessWidget {
-  const FruitItem({super.key});
+  const FruitItem({super.key, required this.productEntity});
+
+  final ProductEntity productEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +33,14 @@ class FruitItem extends StatelessWidget {
                 ),
                 Center(
                   child: Image.asset(
-                    Assets.imagesPineappleCuate,
+                    productEntity.imageUrl!,
                     height: 100,
                     fit: BoxFit.cover,
                   ),
                 ),
                 ListTile(
                   title: Text(
-                    'بطيخ',
+                    productEntity.name,
                     style: Styles.fontText13(context),
                   ),
                   subtitle: FittedBox(
@@ -45,7 +48,7 @@ class FruitItem extends StatelessWidget {
                       TextSpan(
                         children: [
                           TextSpan(
-                            text: '20جنية',
+                            text: productEntity.price.toString(),
                             style: Styles.fontText16(context).copyWith(
                               color: Color(0xffF4A91F),
                             ),
@@ -57,7 +60,7 @@ class FruitItem extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                            text: 'الكيلو',
+                            text: productEntity.unitAmount.toString(),
                             style: Styles.fontText13(context).copyWith(
                               color: Color(0xffF8C76D),
                             ),

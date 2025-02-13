@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomError extends StatelessWidget {
@@ -10,7 +11,10 @@ class CustomError extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(text),
+        Text(
+          text,
+          style: Styles.fontText19(context),
+        ),
       ],
     );
   }

@@ -1,7 +1,6 @@
 import 'package:e_commerce_app/core/cubit/product_cubit/get_product_cubit.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/best_selling_more_header.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/featured_list.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/widget/sliver_list_fruit_item.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/sliver_list_fruit_item_bloc_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

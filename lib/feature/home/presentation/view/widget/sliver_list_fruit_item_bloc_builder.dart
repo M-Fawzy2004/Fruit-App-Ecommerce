@@ -19,7 +19,7 @@ class SliverListFruitItemBlocBuilder extends StatelessWidget {
           return SliverListFruitItem(products: state.products);
         } else if (state is ProductFailure) {
           return SliverToBoxAdapter(
-            child: CustomError(text: state.message),
+            child: CustomError(text: 'state.message'),
           );
         } else {
           return Skeletonizer.sliver(
