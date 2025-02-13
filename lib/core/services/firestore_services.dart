@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_app/core/services/data_base_services.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class FirestoreServices implements DataBaseServices {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
+  final _supbase = Supabase.instance.client;
   @override
   Future<void> addData({
     required String path,
@@ -20,7 +22,27 @@ class FirestoreServices implements DataBaseServices {
   Future<dynamic> getData({
     required String path,
     String? documentId,
+    Map<String, dynamic>? query,
+    bool supabase = false,
   }) async {
+    if (supabase) {
+      PostgrestTransformBuilder<PostgrestList> data =
+          _supbase.from(path).select();
+      if (query != null) {
+        if (query['orderBy'] != null) {
+          var orderByField = query['orderBy'];
+          var isDesending = query['descending'] ?? false;
+          data.order(orderByField, ascending: !isDesending);
+        }
+        if (query['limit'] != null) {
+          var limit = query['limit'];
+          data = data.limit(limit);
+        }
+      }
+      var response = await data;
+      return response;
+    }
+
     if (documentId != null) {
       var data = await firestore.collection(path).doc(documentId).get();
       return data.data() as Map<String, dynamic>;

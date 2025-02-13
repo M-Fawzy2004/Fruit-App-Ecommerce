@@ -8,6 +8,8 @@ abstract class DataBaseServices {
   Future<dynamic> getData({
     required String path,
     String? documentId,
+    Map<String, dynamic>? query,
+    bool supabase,
   });
 
   Future<bool> checkDataExixts({
