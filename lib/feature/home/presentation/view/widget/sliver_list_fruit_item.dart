@@ -1,8 +1,11 @@
+import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/fruit_item.dart';
 import 'package:flutter/material.dart';
 
 class SliverListFruitItem extends StatelessWidget {
-  const SliverListFruitItem({super.key});
+  const SliverListFruitItem({super.key, required this.products});
+
+  final List<ProductEntity> products;
 
   @override
   Widget build(BuildContext context) {
