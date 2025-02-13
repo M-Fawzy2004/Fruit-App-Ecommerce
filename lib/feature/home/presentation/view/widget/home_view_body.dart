@@ -6,13 +6,12 @@ import 'package:flutter/material.dart';
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({
     super.key,
-    required this.size,
   });
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return CustomScrollView(
       physics: BouncingScrollPhysics(),
       slivers: [
