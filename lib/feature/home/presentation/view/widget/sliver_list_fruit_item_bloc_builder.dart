@@ -15,6 +15,7 @@ class SliverListFruitItemBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductCubit, ProductState>(
       builder: (context, state) {
+        print("Current State: $state");
         if (state is ProductSuccess) {
           return SliverListFruitItem(products: state.products);
         } else if (state is ProductFailure) {

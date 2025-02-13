@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:e_commerce_app/core/entities/review_entity.dart';
 
 class ProductEntity {
@@ -28,6 +26,7 @@ class ProductEntity {
     this.isOrganic = false,
     required this.numberOfCalories,
     required this.unitAmount,
-    required this.reviews, required num sellingCount,
+    required this.reviews,
+    required num sellingCount,
   });
 }

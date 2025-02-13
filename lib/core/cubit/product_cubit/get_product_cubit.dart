@@ -9,17 +9,21 @@ class ProductCubit extends Cubit<ProductState> {
 
   final ProductRepo productRepo;
 
-  Future<void> getBestSellingProducts() async {
+  Future<void> getBestSellingProduct() async {
     emit(ProductLoading());
     final result = await productRepo.getBestSellingProducts();
 
     result.fold(
-      (l) => emit(
-        ProductFailure(l.message),
-      ),
-      (products) => emit(
-        ProductSuccess(products),
-      ),
+      (failure) {
+        print(
+            "Failed to fetch products: ${failure.message}"); // Debugging: Print failure
+        emit(ProductFailure(failure.message));
+      },
+      (products) {
+        print(
+            "Products fetched successfully: ${products.length}"); // Debugging: Print success
+        emit(ProductSuccess(products));
+      },
     );
   }
 }

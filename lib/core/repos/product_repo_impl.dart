@@ -22,7 +22,6 @@ class ProductRepoImpl extends ProductRepo {
           'descending': true,
         },
       ) as List<Map<String, dynamic>>;
-
       List<ProductModel> products =
           data.map((e) => ProductModel.fromJson(e)).toList();
 
@@ -38,7 +37,9 @@ class ProductRepoImpl extends ProductRepo {
   Future<Either<Failures, List<ProductEntity>>> getProducts() async {
     try {
       var data = await dataBaseServices.getData(
-          path: BackendEntpoint.getProducts) as List<Map<String, dynamic>>;
+        path: BackendEntpoint.getProducts,
+      ) as List<Map<String, dynamic>>;
+      print("Fetched Data: $data"); // Debugging: Print fetched data
 
       List<ProductModel> products =
           data.map((e) => ProductModel.fromJson(e)).toList();

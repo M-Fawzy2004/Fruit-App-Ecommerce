@@ -41,7 +41,7 @@ class ProductModel {
       code: json['code'],
       desc: json['desc'],
       imageUrl: json['imageUrl'],
-      isFeatured: json['isFeatured'] ?? false,
+      isFeatured: json['isFeatured'] ? true : false,
       expritionmonths: json['expritionmonths'],
       isOrganic: json['isOrganic'],
       numberOfCalories: json['numberOfCalories'],
