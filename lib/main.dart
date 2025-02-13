@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/constant.dart';
 import 'package:e_commerce_app/core/helper/function/custom_bloc_observer.dart';
 import 'package:e_commerce_app/core/helper/on_generate.dart';
 import 'package:e_commerce_app/core/services/get_it_service.dart';
@@ -12,10 +13,15 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Supabase.initialize(
+    url: kSupabaseUrl,
+    anonKey: kSupabaseKey,
+  );
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
