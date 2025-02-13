@@ -23,11 +23,12 @@ class FirestoreServices implements DataBaseServices {
   //   required String path,
   //   String? documentId,
   //   Map<String, dynamic>? query,
-  //   bool supabase = true,
+  //   bool supabase = false,
   // }) async {
+  //   print("Fetching data from: $path"); // Debugging: Print the path
   //   if (supabase) {
   //     PostgrestTransformBuilder<PostgrestList> data =
-  //         _supbase.from(path).select();
+  //         _supbase.from(path).select('*');
   //     if (query != null) {
   //       if (query['orderBy'] != null) {
   //         var orderByField = query['orderBy'];
@@ -40,14 +41,20 @@ class FirestoreServices implements DataBaseServices {
   //       }
   //     }
   //     var response = await data;
+  //     print(
+  //       "Response from Supabase: $response",
+  //     ); // Debugging: Print the response
   //     return response;
   //   }
   //   if (documentId != null) {
   //     var data = await firestore.collection(path).doc(documentId).get();
+  //     print(
+  //         "Firestore document data: ${data.data()}"); // Debugging: Print Firestore data
   //     return data.data() as Map<String, dynamic>;
   //   } else {
   //     var data = await firestore.collection(path).get();
-
+  //     print(
+  //         "Firestore collection data: ${data.docs.map((e) => e.data()).toList()}"); // Debugging: Print Firestore data
   //     return data.docs.map((e) => e.data()).toList();
   //   }
   // }
@@ -58,36 +65,43 @@ class FirestoreServices implements DataBaseServices {
     Map<String, dynamic>? query,
     bool supabase = true,
   }) async {
-    print("Fetching data from: $path"); // Debugging: Print the path
-    if (supabase) {
-      PostgrestTransformBuilder<PostgrestList> data =
-          _supbase.from(path).select();
-      if (query != null) {
-        if (query['orderBy'] != null) {
-          var orderByField = query['orderBy'];
-          var isDesending = query['descending'] ?? false;
-          data = data.order(orderByField, ascending: !isDesending);
+    print("Fetching data from: $path (Supabase: $supabase)");
+
+    try {
+      if (supabase) {
+        PostgrestTransformBuilder<PostgrestList> data =
+            _supbase.from(path).select('*');
+
+        if (query != null) {
+          if (query['orderBy'] != null) {
+            var orderByField = query['orderBy'];
+            var isDescending = query['ascending'] ?? false;
+            data = data.order(orderByField, ascending: !isDescending);
+          }
+          if (query['limit'] != null) {
+            var limit = query['limit'];
+            data = data.limit(limit);
+          }
         }
-        if (query['limit'] != null) {
-          var limit = query['limit'];
-          data = data.limit(limit);
+
+        var response = await data;
+        print("✅ Response from Supabase: $response");
+        return response;
+      } else {
+        if (documentId != null) {
+          var data = await firestore.collection(path).doc(documentId).get();
+          print("Firestore document data: ${data.data()}");
+          return data.data() as Map<String, dynamic>;
+        } else {
+          var data = await firestore.collection(path).get();
+          print(
+              "Firestore collection data: ${data.docs.map((e) => e.data()).toList()}");
+          return data.docs.map((e) => e.data()).toList();
         }
       }
-      var response = await data;
-      print(
-          "Response from Supabase: $response"); // Debugging: Print the response
-      return response;
-    }
-    if (documentId != null) {
-      var data = await firestore.collection(path).doc(documentId).get();
-      print(
-          "Firestore document data: ${data.data()}"); // Debugging: Print Firestore data
-      return data.data() as Map<String, dynamic>;
-    } else {
-      var data = await firestore.collection(path).get();
-      print(
-          "Firestore collection data: ${data.docs.map((e) => e.data()).toList()}"); // Debugging: Print Firestore data
-      return data.docs.map((e) => e.data()).toList();
+    } catch (e) {
+      print("❌ Error fetching data: $e");
+      return null;
     }
   }
 

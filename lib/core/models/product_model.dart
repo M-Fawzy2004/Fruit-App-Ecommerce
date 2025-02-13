@@ -1,6 +1,5 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/entities/review_entity.dart';
-import 'package:e_commerce_app/core/helper/get_avg_rating.dart';
 
 class ProductModel {
   final String name;
@@ -13,7 +12,7 @@ class ProductModel {
   final bool isOrganic;
   final int numberOfCalories;
   final num avgRating;
-  final num ratingCount = 0;
+  final num ratingCount;
   final num sellingCount;
   final int unitAmount;
   final List<ReviewEntity> reviews;
@@ -32,6 +31,7 @@ class ProductModel {
     required this.reviews,
     required this.sellingCount,
     required this.avgRating,
+    required this.ratingCount,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
@@ -39,16 +39,17 @@ class ProductModel {
       name: json['name'],
       price: json['price'],
       code: json['code'],
-      desc: json['desc'],
-      imageUrl: json['imageUrl'],
-      isFeatured: json['isFeatured'] ? true : false,
-      expritionmonths: json['expritionmonths'],
-      isOrganic: json['isOrganic'],
-      numberOfCalories: json['numberOfCalories'],
-      unitAmount: json['unitAmount'],
+      desc: json['description'],
+      imageUrl: json['image_url'],
+      isFeatured: json['is_featured'],
+      expritionmonths: json['expiration_months'],
+      isOrganic: json['is_organic'],
+      numberOfCalories: json['number_of_calories'],
+      avgRating: json['avg_rating'],
+      unitAmount: json['unit_amount'],
+      ratingCount: json['rating_count'],
+      sellingCount: json['selling_count'],
       reviews: json['reviews'],
-      sellingCount: json['sellingCount'],
-      avgRating: getAvagreRating(json['reviews']),
     );
   }
 
@@ -74,17 +75,16 @@ class ProductModel {
       'name': name,
       'price': price,
       'code': code,
-      'desc': desc,
-      'imageUrl': imageUrl,
-      'isFeatured': isFeatured,
-      'expritionmonths': expritionmonths,
-      'isOrganic': isOrganic,
-      'numberOfCalories': numberOfCalories,
-      'unitAmount': unitAmount,
-      'avgRating': avgRating,
-      'ratingCount': ratingCount,
-      'reviews': reviews,
-      'sellingCount': sellingCount,
+      'description': desc,
+      'image_url': imageUrl,
+      'is_featured': isFeatured,
+      'expiration_months': expritionmonths,
+      'is_organic': isOrganic,
+      'number_of_calories': numberOfCalories,
+      'avg_rating': avgRating,
+      'unit_amount': unitAmount,
+      'rating_count': ratingCount,
+      'selling_count': sellingCount
     };
   }
 }

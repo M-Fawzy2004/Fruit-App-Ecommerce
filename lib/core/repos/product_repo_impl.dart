@@ -18,13 +18,12 @@ class ProductRepoImpl extends ProductRepo {
         path: BackendEntpoint.getProducts,
         query: {
           'limit': 10,
-          'orderBy': 'sellingCount',
-          'descending': true,
+          'orderBy': 'selling_count',
+          'ascending': true,
         },
-      ) as List<Map<String, dynamic>>;
+      );
       List<ProductModel> products =
           data.map((e) => ProductModel.fromJson(e)).toList();
-
       List<ProductEntity> productEntity =
           products.map((e) => e.toEntity()).toList();
       return right(productEntity);
