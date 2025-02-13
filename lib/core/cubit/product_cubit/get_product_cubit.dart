@@ -4,20 +4,20 @@ import 'package:e_commerce_app/core/repos/product_repo.dart';
 import 'package:meta/meta.dart';
 part 'get_product_state.dart';
 
-class GetProductCubit extends Cubit<GetProductState> {
-  GetProductCubit(this.productRepo) : super(GetProductInitial());
+class ProductCubit extends Cubit<ProductState> {
+  ProductCubit(this.productRepo) : super(ProductInitial());
 
   final ProductRepo productRepo;
 
-  Future<void> getProducts() async {
-    emit(GetProductLoading());
-    final result = await productRepo.getProducts();
+  Future<void> getBestSellingProducts() async {
+    emit(ProductLoading());
+    final result = await productRepo.getBestSellingProducts();
     result.fold(
       (l) => emit(
-        GetProductFailure(l.message),
+        ProductFailure(l.message),
       ),
       (products) => emit(
-        GetProductSuccess(products),
+        ProductSuccess(products),
       ),
     );
   }

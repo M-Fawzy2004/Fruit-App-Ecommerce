@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/core/cubit/get_product/get_product_cubit.dart';
+import 'package:e_commerce_app/core/cubit/product_cubit/get_product_cubit.dart';
 import 'package:e_commerce_app/core/repos/product_repo.dart';
 import 'package:e_commerce_app/core/services/get_it_service.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/home_view_body.dart';
@@ -11,7 +11,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GetProductCubit(
+      create: (context) => ProductCubit(
         getIt.get<ProductRepo>(),
       ),
       child: HomeViewBody(),
