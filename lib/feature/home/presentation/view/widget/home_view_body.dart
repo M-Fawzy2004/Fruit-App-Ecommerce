@@ -4,11 +4,15 @@ import 'package:e_commerce_app/feature/home/presentation/view/widget/sliver_grid
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({
+    super.key,
+    required this.size,
+  });
+
+  final Size size;
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return CustomScrollView(
       physics: BouncingScrollPhysics(),
       slivers: [

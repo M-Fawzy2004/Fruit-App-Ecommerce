@@ -2,7 +2,7 @@
 
 import 'package:e_commerce_app/core/services/firebase_auth_services.dart';
 import 'package:e_commerce_app/core/utils/assets.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/home_view.dart';
+import 'package:e_commerce_app/feature/home/presentation/view/main_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../on_boarding/presentation/view/on_boarding_view.dart';
@@ -57,7 +57,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         // }
         var isLogin = FirebaseAuthServices().isLoggedIn();
         if (isLogin) {
-          Navigator.pushReplacementNamed(context, HomeView.routeName);
+          Navigator.pushReplacementNamed(context, MainView.routeName);
         } else {
           Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
         }

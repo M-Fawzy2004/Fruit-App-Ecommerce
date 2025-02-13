@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_sliver_app_bar.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/widget/home_view_body.dart';
+import 'package:e_commerce_app/feature/home/presentation/view/widget/home_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class CustomNestedScrollView extends StatelessWidget {
       },
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0),
-        child: HomeViewBody(),
+        child: HomeView(),
       ),
     );
   }

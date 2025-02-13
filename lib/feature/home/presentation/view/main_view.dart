@@ -7,16 +7,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class MainView extends StatefulWidget {
+  const MainView({super.key});
 
   static const routeName = '/home';
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<MainView> createState() => _MainViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _MainViewState extends State<MainView> {
   final items = [
     Icon(CupertinoIcons.house_fill),
     Icon(CupertinoIcons.square_grid_2x2),
