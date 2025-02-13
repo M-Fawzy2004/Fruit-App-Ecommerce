@@ -30,7 +30,7 @@ class ProductRepoImpl extends ProductRepo {
           products.map((e) => e.toEntity()).toList();
       return right(productEntity);
     } catch (e) {
-      return left(ServerFailure(message: 'Feild to get products'));
+      return left(ServerFailure(message: 'Feild to get Selling products'));
     }
   }
 

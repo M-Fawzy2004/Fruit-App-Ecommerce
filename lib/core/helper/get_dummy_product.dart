@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:e_commerce_app/core/entities/product_entity.dart';
-import 'package:e_commerce_app/core/utils/assets.dart';
 
 ProductEntity getDummyProduct() {
   return ProductEntity(
@@ -9,7 +6,6 @@ ProductEntity getDummyProduct() {
     price: 10.5,
     code: "APPLE123",
     desc: "تفاح أحمر طازج ولذيذ",
-    image: File(Assets.imagesApple),
     imageUrl: "https://example.com/apple.png",
     isFeatured: true,
     expritionmonths: 3,

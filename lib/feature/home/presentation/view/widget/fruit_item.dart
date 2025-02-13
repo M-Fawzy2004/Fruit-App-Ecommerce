@@ -33,7 +33,7 @@ class FruitItem extends StatelessWidget {
                 ),
                 Center(
                   child: Image.asset(
-                    productEntity.imageUrl!,
+                    Assets.imagesPineappleCuate,
                     height: 100,
                     fit: BoxFit.cover,
                   ),
@@ -48,7 +48,7 @@ class FruitItem extends StatelessWidget {
                       TextSpan(
                         children: [
                           TextSpan(
-                            text: productEntity.price.toString(),
+                            text: '20 جنيه',
                             style: Styles.fontText16(context).copyWith(
                               color: Color(0xffF4A91F),
                             ),
@@ -60,7 +60,7 @@ class FruitItem extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                            text: productEntity.unitAmount.toString(),
+                            text: 'لكل كيلو',
                             style: Styles.fontText13(context).copyWith(
                               color: Color(0xffF8C76D),
                             ),

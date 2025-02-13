@@ -23,7 +23,7 @@ class FirestoreServices implements DataBaseServices {
     required String path,
     String? documentId,
     Map<String, dynamic>? query,
-    bool supabase = false,
+    bool supabase = true,
   }) async {
     if (supabase) {
       PostgrestTransformBuilder<PostgrestList> data =
@@ -32,7 +32,7 @@ class FirestoreServices implements DataBaseServices {
         if (query['orderBy'] != null) {
           var orderByField = query['orderBy'];
           var isDesending = query['descending'] ?? false;
-          data.order(orderByField, ascending: !isDesending);
+          data = data.order(orderByField, ascending: !isDesending);
         }
         if (query['limit'] != null) {
           var limit = query['limit'];
@@ -42,12 +42,12 @@ class FirestoreServices implements DataBaseServices {
       var response = await data;
       return response;
     }
-
     if (documentId != null) {
       var data = await firestore.collection(path).doc(documentId).get();
       return data.data() as Map<String, dynamic>;
     } else {
       var data = await firestore.collection(path).get();
+
       return data.docs.map((e) => e.data()).toList();
     }
   }
