@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:e_commerce_app/feature/home/presentation/view/product_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_nested_scroll_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -26,7 +27,7 @@ class _MainViewState extends State<MainView> {
 
   final screens = [
     const CustomNestedScrollView(),
-    Center(child: const Text('المنتجات')),
+    const ProductView(),
     Center(child: const Text('عربه التسوق')),
     Center(
       child: Column(

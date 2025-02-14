@@ -39,9 +39,9 @@ class FruitItem extends StatelessWidget {
                     width: MediaQuery.sizeOf(context).width * .4,
                     imageUrl: productEntity.imageUrl ?? '',
                     fit: BoxFit.cover,
-                    placeholder: (context, url) => const Icon(
+                    placeholder: (context, url) => Icon(
                       Icons.image,
-                      size: 25,
+                      size: MediaQuery.sizeOf(context).height * .12,
                       color: Colors.grey,
                     ),
                     errorWidget: (context, url, error) => Container(
@@ -59,8 +59,10 @@ class FruitItem extends StatelessWidget {
                 ListTile(
                   title: Text(
                     productEntity.name,
-                    style: Styles.fontText13(context).copyWith(
+                    maxLines: 1,
+                    style: Styles.fontText16(context).copyWith(
                       fontWeight: FontWeight.w800,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   subtitle: CustomSubtitleText(productEntity: productEntity),

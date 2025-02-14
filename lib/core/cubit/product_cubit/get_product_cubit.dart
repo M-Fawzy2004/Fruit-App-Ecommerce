@@ -15,13 +15,9 @@ class ProductCubit extends Cubit<ProductState> {
 
     result.fold(
       (failure) {
-        print(
-            "Failed to fetch products: ${failure.message}"); // Debugging: Print failure
         emit(ProductFailure(failure.message));
       },
       (products) {
-        print(
-            "Products fetched successfully: ${products.length}"); // Debugging: Print success
         emit(ProductSuccess(products));
       },
     );
