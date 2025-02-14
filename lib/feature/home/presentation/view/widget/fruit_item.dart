@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
-import 'package:e_commerce_app/core/utils/assets.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_subtite_text.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +35,7 @@ class FruitItem extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: CachedNetworkImage(
-                    height: 100,
+                    height: MediaQuery.sizeOf(context).height * .1,
                     width: MediaQuery.sizeOf(context).width * .4,
                     imageUrl: productEntity.imageUrl ?? '',
                     fit: BoxFit.cover,
@@ -52,6 +51,9 @@ class FruitItem extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.009,
                 ),
                 ListTile(
                   title: Text(
