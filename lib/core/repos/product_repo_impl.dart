@@ -22,13 +22,25 @@ class ProductRepoImpl extends ProductRepo {
           'ascending': true,
         },
       );
-      List<ProductModel> products =
-          data.map((e) => ProductModel.fromJson(e)).toList();
-      List<ProductEntity> productEntity =
-          products.map((e) => e.toEntity()).toList();
-      return right(productEntity);
+      if (data is List<Map<String, dynamic>>) {
+        List<ProductModel> products =
+            data.map((e) => ProductModel.fromJson(e)).toList();
+        List<ProductEntity> productEntity =
+            products.map((e) => e.toEntity()).toList();
+        return right(productEntity);
+      } else {
+        return left(
+          ServerFailure(
+            message: 'Feild to get Selling products',
+          ),
+        );
+      }
     } catch (e) {
-      return left(ServerFailure(message: 'Feild to get Selling products'));
+      return left(
+        ServerFailure(
+          message: 'Feild to get Selling products $e',
+        ),
+      );
     }
   }
 
@@ -38,8 +50,7 @@ class ProductRepoImpl extends ProductRepo {
       var data = await dataBaseServices.getData(
         path: BackendEntpoint.getProducts,
       ) as List<Map<String, dynamic>>;
-      print("Fetched Data: $data"); // Debugging: Print fetched data
-
+      
       List<ProductModel> products =
           data.map((e) => ProductModel.fromJson(e)).toList();
 
@@ -47,7 +58,11 @@ class ProductRepoImpl extends ProductRepo {
           products.map((e) => e.toEntity()).toList();
       return right(productEntity);
     } catch (e) {
-      return left(ServerFailure(message: 'Feild to get products'));
+      return left(
+        ServerFailure(
+          message: 'Feild to get products',
+        ),
+      );
     }
   }
 }

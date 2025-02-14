@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/entities/review_entity.dart';
+import 'package:e_commerce_app/core/models/review_model.dart';
 
 class ProductModel {
   final String name;
@@ -49,7 +50,10 @@ class ProductModel {
       unitAmount: json['unit_amount'],
       ratingCount: json['rating_count'],
       sellingCount: json['selling_count'],
-      reviews: json['reviews'],
+      reviews: (json['reviews'] as List?)
+              ?.map((e) => ReviewModel.fromJson(e).toEntity())
+              .toList() ??
+          [],
     );
   }
 

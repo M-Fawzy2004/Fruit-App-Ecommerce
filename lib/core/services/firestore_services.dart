@@ -65,8 +65,6 @@ class FirestoreServices implements DataBaseServices {
     Map<String, dynamic>? query,
     bool supabase = true,
   }) async {
-    print("Fetching data from: $path (Supabase: $supabase)");
-
     try {
       if (supabase) {
         PostgrestTransformBuilder<PostgrestList> data =
@@ -85,22 +83,18 @@ class FirestoreServices implements DataBaseServices {
         }
 
         var response = await data;
-        print("✅ Response from Supabase: $response");
         return response;
       } else {
         if (documentId != null) {
           var data = await firestore.collection(path).doc(documentId).get();
-          print("Firestore document data: ${data.data()}");
           return data.data() as Map<String, dynamic>;
         } else {
           var data = await firestore.collection(path).get();
-          print(
-              "Firestore collection data: ${data.docs.map((e) => e.data()).toList()}");
+          
           return data.docs.map((e) => e.data()).toList();
         }
       }
     } catch (e) {
-      print("❌ Error fetching data: $e");
       return null;
     }
   }
