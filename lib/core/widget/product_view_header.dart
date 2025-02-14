@@ -6,19 +6,24 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class BestSellingViewHeader extends StatelessWidget {
-  const BestSellingViewHeader({super.key});
+class ProductViewHeader extends StatelessWidget {
+  const ProductViewHeader({super.key, required this.isVisible});
+
+  final bool isVisible;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios),
+        Visibility(
+          visible: isVisible,
+          child: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios),
+          ),
         ),
         Text(
           LocaleKeys.HomeView_bestSeller.tr(),

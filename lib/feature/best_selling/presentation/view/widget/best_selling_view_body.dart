@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/feature/best_selling/presentation/view/widget/best_selling_view_header.dart';
+import 'package:e_commerce_app/core/widget/product_view_header.dart';
 import 'package:flutter/material.dart';
 
 class BestSellingViewBody extends StatelessWidget {
@@ -12,7 +12,7 @@ class BestSellingViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
-            child: BestSellingViewHeader(),
+            child: ProductViewHeader(isVisible: true),
           ),
         ),
       ],

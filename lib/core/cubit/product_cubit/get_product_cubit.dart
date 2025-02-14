@@ -9,9 +9,25 @@ class ProductCubit extends Cubit<ProductState> {
 
   final ProductRepo productRepo;
 
+  // get selling product
   Future<void> getBestSellingProduct() async {
     emit(ProductLoading());
     final result = await productRepo.getBestSellingProducts();
+
+    result.fold(
+      (failure) {
+        emit(ProductFailure(failure.message));
+      },
+      (products) {
+        emit(ProductSuccess(products));
+      },
+    );
+  }
+
+  // get all product
+  Future<void> getProduct() async {
+    emit(ProductLoading());
+    final result = await productRepo.getProducts();
 
     result.fold(
       (failure) {

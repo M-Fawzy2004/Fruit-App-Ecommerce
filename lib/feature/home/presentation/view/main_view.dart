@@ -64,7 +64,10 @@ class _MainViewState extends State<MainView> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 15),
-          child: screens[index],
+          child: IndexedStack(
+            index: index,
+            children: screens,
+          ),
         ),
       ),
     );
