@@ -35,7 +35,7 @@ class FruitItem extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: CachedNetworkImage(
-                    height: MediaQuery.sizeOf(context).height * .1,
+                    height: MediaQuery.sizeOf(context).height * .12,
                     width: MediaQuery.sizeOf(context).width * .4,
                     imageUrl: productEntity.imageUrl ?? '',
                     fit: BoxFit.cover,
@@ -44,21 +44,24 @@ class FruitItem extends StatelessWidget {
                       size: 25,
                       color: Colors.grey,
                     ),
-                    errorWidget: (context, url, error) => Image.asset(
-                      '',
-                      height: 100,
-                      width: 100,
-                      fit: BoxFit.cover,
+                    errorWidget: (context, url, error) => Container(
+                      color: Theme.of(context).colorScheme.secondary,
+                      child: SizedBox(
+                        height: MediaQuery.sizeOf(context).height * .12,
+                        width: MediaQuery.sizeOf(context).width * .4,
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.009,
+                  height: MediaQuery.of(context).size.height * 0.007,
                 ),
                 ListTile(
                   title: Text(
                     productEntity.name,
-                    style: Styles.fontText13(context),
+                    style: Styles.fontText13(context).copyWith(
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
                   subtitle: CustomSubtitleText(productEntity: productEntity),
                   trailing: CircleAvatar(

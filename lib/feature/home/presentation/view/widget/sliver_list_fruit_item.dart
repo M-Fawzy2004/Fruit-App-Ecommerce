@@ -14,7 +14,7 @@ class SliverListFruitItem extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 8,
         crossAxisSpacing: 12,
-        childAspectRatio: 160 / 200,
+        childAspectRatio: 160 / 210,
       ),
       itemCount: products.length,
       itemBuilder: (context, index) {

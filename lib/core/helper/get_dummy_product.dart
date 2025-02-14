@@ -6,7 +6,7 @@ ProductEntity getDummyProduct() {
     price: 10.5,
     code: "APPLE123",
     desc: "تفاح أحمر طازج ولذيذ",
-    imageUrl: "https://example.com/apple.png",
+    imageUrl: null,
     isFeatured: true,
     expritionmonths: 3,
     isOrganic: true,
