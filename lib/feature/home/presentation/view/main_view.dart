@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:e_commerce_app/feature/home/presentation/view/cart_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/product_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_nested_scroll_view.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -19,7 +20,7 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
   final items = [
-    Icon(CupertinoIcons.house_fill),
+    Icon(CupertinoIcons.house_fill, color: Colors.red),
     Icon(CupertinoIcons.square_grid_2x2),
     Icon(CupertinoIcons.cart_fill),
     Icon(CupertinoIcons.person_fill),
@@ -28,7 +29,7 @@ class _MainViewState extends State<MainView> {
   final screens = [
     const CustomNestedScrollView(),
     const ProductView(),
-    Center(child: const Text('عربه التسوق')),
+    const CartView(),
     Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

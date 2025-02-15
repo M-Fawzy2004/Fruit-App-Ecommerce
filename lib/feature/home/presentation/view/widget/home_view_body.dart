@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/cubit/product_cubit/get_product_cubit.dart';
+import 'package:e_commerce_app/core/widget/search_bar_delegate.dart';
 import 'package:e_commerce_app/feature/best_selling/presentation/view/best_selling_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/product_more_header.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/featured_list.dart';
@@ -30,6 +31,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return CustomScrollView(
       physics: BouncingScrollPhysics(),
       slivers: [
+        SliverPersistentHeader(
+          pinned: true,
+          floating: false,
+          delegate: SearchBarDelegate(),
+        ),
         SliverToBoxAdapter(
           child: Column(
             children: [

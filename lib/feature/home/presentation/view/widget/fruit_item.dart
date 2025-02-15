@@ -4,10 +4,17 @@ import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_subtite_text.dart';
 import 'package:flutter/material.dart';
 
-class FruitItem extends StatelessWidget {
+class FruitItem extends StatefulWidget {
   const FruitItem({super.key, required this.productEntity});
 
   final ProductEntity productEntity;
+
+  @override
+  State<FruitItem> createState() => _FruitItemState();
+}
+
+class _FruitItemState extends State<FruitItem> {
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +29,15 @@ class FruitItem extends StatelessWidget {
             top: 0,
             right: 0,
             child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.favorite_outline),
+              onPressed: () {
+                setState(() {
+                  isFavorite = !isFavorite;
+                });
+              },
+              icon: Icon(
+                isFavorite ? Icons.favorite : Icons.favorite_outline,
+                color: isFavorite ? Colors.red : Colors.grey,
+              ),
             ),
           ),
           Positioned.fill(
@@ -37,7 +51,7 @@ class FruitItem extends StatelessWidget {
                   child: CachedNetworkImage(
                     height: MediaQuery.sizeOf(context).height * .12,
                     width: MediaQuery.sizeOf(context).width * .4,
-                    imageUrl: productEntity.imageUrl ?? '',
+                    imageUrl: widget.productEntity.imageUrl ?? '',
                     fit: BoxFit.cover,
                     placeholder: (context, url) => Icon(
                       Icons.image,
@@ -58,14 +72,15 @@ class FruitItem extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text(
-                    productEntity.name,
+                    widget.productEntity.name,
                     maxLines: 1,
                     style: Styles.fontText16(context).copyWith(
                       fontWeight: FontWeight.w800,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  subtitle: CustomSubtitleText(productEntity: productEntity),
+                  subtitle:
+                      CustomSubtitleText(productEntity: widget.productEntity),
                   trailing: CircleAvatar(
                     backgroundColor: Color(0xff1B5E37),
                     child: IconButton(

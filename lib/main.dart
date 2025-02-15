@@ -18,7 +18,6 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-
   await Supabase.initialize(
     url: kSupabaseUrl,
     anonKey: kSupabaseKey,

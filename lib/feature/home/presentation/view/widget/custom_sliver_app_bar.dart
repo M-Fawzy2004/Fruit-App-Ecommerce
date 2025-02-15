@@ -1,6 +1,5 @@
 import 'package:e_commerce_app/constant.dart';
 import 'package:e_commerce_app/core/utils/assets.dart';
-import 'package:e_commerce_app/core/widget/search_text_field.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/text_app_bar_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,9 +15,6 @@ class CustomSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      expandedHeight: 120.0,
-      floating: true,
-      pinned: false,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -44,13 +40,6 @@ class CustomSliverAppBar extends StatelessWidget {
             ),
           ),
         ],
-      ),
-      bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(48.0),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: SearchTextField(),
-        ),
       ),
     );
   }
