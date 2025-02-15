@@ -40,8 +40,9 @@ class _ProductCategoryListViewState extends State<ProductCategoryListView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * 0.17,
+      height: MediaQuery.sizeOf(context).height * 0.135,
       child: ListView.builder(
+        padding: EdgeInsets.zero,
         scrollDirection: Axis.horizontal,
         physics: BouncingScrollPhysics(),
         itemBuilder: (context, index) {

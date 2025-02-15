@@ -47,9 +47,6 @@ class _ProductViewBodyState extends State<ProductViewBody> {
                 height: size.height * 0.02,
               ),
               ProductCategoryListView(),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
               ProductMoreHeader(
                 onTap: () =>
                     Navigator.pushNamed(context, BestSellingView.routeName),
