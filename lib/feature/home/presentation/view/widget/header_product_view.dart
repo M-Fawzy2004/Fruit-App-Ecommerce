@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/helper/show_modal_bottom_sheet.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/core/utils/assets.dart';
 import 'package:e_commerce_app/generated/locale_keys.g.dart';
@@ -18,7 +19,7 @@ class HeaderProductView extends StatelessWidget {
         ),
         const Spacer(),
         GestureDetector(
-          onTap: () {},
+          onTap: () => showSortBottomSheet(context),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
@@ -37,4 +38,5 @@ class HeaderProductView extends StatelessWidget {
       ],
     );
   }
+
 }

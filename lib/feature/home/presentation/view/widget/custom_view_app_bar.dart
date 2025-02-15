@@ -16,7 +16,6 @@ class CustomViewAppBar extends StatelessWidget {
           color: Color(0xff949D9E),
         ),
       ),
-      subtitle: Text(''),
     );
   }
 }
