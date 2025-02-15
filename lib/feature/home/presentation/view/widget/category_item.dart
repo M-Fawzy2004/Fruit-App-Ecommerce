@@ -10,14 +10,17 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          height: MediaQuery.sizeOf(context).height * 0.1,
-          width: MediaQuery.sizeOf(context).width * 0.2,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Color(0xffF3F5F7),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 6.0),
+          child: Container(
+            height: MediaQuery.sizeOf(context).height * 0.08,
+            width: MediaQuery.sizeOf(context).width * 0.17,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Theme.of(context).colorScheme.tertiary,
+            ),
+            child: Image.asset(image),
           ),
-          child: Image.asset(image),
         ),
         const SizedBox(height: 8),
         Text(

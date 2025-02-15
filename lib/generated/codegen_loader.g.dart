@@ -106,6 +106,13 @@ class CodegenLoader extends AssetLoader{
     "bestSeller": "الأكثر مبيعا",
     "product": "منتجاتنا",
     "more": "المزيد"
+  },
+  "CategoryProduct": {
+    "avocado": "افوكادو",
+    "strawberry": "فرولة",
+    "banana": "موز",
+    "watermelon": "بطيخ",
+    "pineapple": "أناناس"
   }
 };
 static const Map<String,dynamic> _en = {
@@ -200,6 +207,13 @@ static const Map<String,dynamic> _en = {
     "bestSeller": "Best Seller",
     "product": "product",
     "more": "More"
+  },
+  "CategoryProduct": {
+    "avocado": "Avocado",
+    "strawberry": "Strawberry",
+    "banana": "Banana",
+    "watermelon": "Watermelon",
+    "pineapple": "Pineapple"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};

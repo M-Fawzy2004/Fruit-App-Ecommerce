@@ -82,5 +82,11 @@ abstract class  LocaleKeys {
   static const HomeView_product = 'HomeView.product';
   static const HomeView_more = 'HomeView.more';
   static const HomeView = 'HomeView';
+  static const CategoryProduct_avocado = 'CategoryProduct.avocado';
+  static const CategoryProduct_strawberry = 'CategoryProduct.strawberry';
+  static const CategoryProduct_banana = 'CategoryProduct.banana';
+  static const CategoryProduct_watermelon = 'CategoryProduct.watermelon';
+  static const CategoryProduct_pineapple = 'CategoryProduct.pineapple';
+  static const CategoryProduct = 'CategoryProduct';
 
 }
