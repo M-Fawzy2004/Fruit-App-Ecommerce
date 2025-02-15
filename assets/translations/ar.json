@@ -100,7 +100,9 @@
     "discount" : "خصم 25%",
     "shopNow" : "تسوق الان",
     "bestSeller" : "الأكثر مبيعا",
-    "product": "منتجاتنا",
+    "ourProducts": "منتجاتنا",
+    "product"  :"المنتجات",    
+    "cart" : "السلة",
     "more" : "المزيد"
   },
 

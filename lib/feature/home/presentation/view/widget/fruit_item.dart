@@ -1,6 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
+import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_cached_network_image.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_subtite_text.dart';
 import 'package:flutter/material.dart';
 
@@ -46,27 +46,7 @@ class _FruitItemState extends State<FruitItem> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: CachedNetworkImage(
-                    height: MediaQuery.sizeOf(context).height * .12,
-                    width: MediaQuery.sizeOf(context).width * .4,
-                    imageUrl: widget.productEntity.imageUrl ?? '',
-                    fit: BoxFit.cover,
-                    placeholder: (context, url) => Icon(
-                      Icons.image,
-                      size: MediaQuery.sizeOf(context).height * .12,
-                      color: Colors.grey,
-                    ),
-                    errorWidget: (context, url, error) => Container(
-                      color: Theme.of(context).colorScheme.secondary,
-                      child: SizedBox(
-                        height: MediaQuery.sizeOf(context).height * .12,
-                        width: MediaQuery.sizeOf(context).width * .4,
-                      ),
-                    ),
-                  ),
-                ),
+                CustomCachedNetworkImage(widget: widget),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.007,
                 ),

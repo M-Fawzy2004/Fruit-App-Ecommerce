@@ -18,7 +18,7 @@ class ProductView extends StatelessWidget {
           getIt.get<ProductRepo>(),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
           child: ProductViewBody(),
         ),
       ),

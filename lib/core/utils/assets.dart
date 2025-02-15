@@ -105,5 +105,9 @@ class Assets {
   /// Assets for imagesTextttt
   /// assets/images/textttt.svg
   static const String imagesTextttt = "assets/images/textttt.svg";
+
+  /// Assets for imagesTrash
+  /// assets/images/trash.svg
+  static const String imagesTrash = "assets/images/trash.svg";
 }
 

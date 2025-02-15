@@ -14,7 +14,7 @@ class HeaderProductView extends StatelessWidget {
     return Row(
       children: [
         Text(
-          LocaleKeys.HomeView_product.tr(),
+          LocaleKeys.HomeView_ourProducts.tr(),
           style: Styles.fontText16(context),
         ),
         const Spacer(),
@@ -38,5 +38,4 @@ class HeaderProductView extends StatelessWidget {
       ],
     );
   }
-
 }

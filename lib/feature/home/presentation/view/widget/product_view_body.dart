@@ -34,7 +34,11 @@ class _ProductViewBodyState extends State<ProductViewBody> {
         SliverToBoxAdapter(
           child: Column(
             children: [
-              ProductViewHeader(isVisible: false),
+              ProductViewHeader(
+                title: LocaleKeys.HomeView_product.tr(),
+                isVisible: false,
+                isVisibleNotification: true,
+              ),
               SizedBox(height: size.height * 0.02),
             ],
           ),

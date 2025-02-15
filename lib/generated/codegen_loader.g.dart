@@ -104,7 +104,9 @@ class CodegenLoader extends AssetLoader{
     "discount": "خصم 25%",
     "shopNow": "تسوق الان",
     "bestSeller": "الأكثر مبيعا",
-    "product": "منتجاتنا",
+    "ourProducts": "منتجاتنا",
+    "product": "المنتجات",
+    "cart": "السلة",
     "more": "المزيد"
   },
   "CategoryProduct": {
@@ -205,7 +207,9 @@ static const Map<String,dynamic> _en = {
     "discount": "25% Discount",
     "shopNow": "ShopNow",
     "bestSeller": "Best Seller",
-    "product": "product",
+    "ourProducts": "Our Products",
+    "product": "Products",
+    "cart": "Cart",
     "more": "More"
   },
   "CategoryProduct": {

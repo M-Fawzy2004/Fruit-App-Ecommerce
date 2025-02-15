@@ -79,7 +79,9 @@ abstract class  LocaleKeys {
   static const HomeView_discount = 'HomeView.discount';
   static const HomeView_shopNow = 'HomeView.shopNow';
   static const HomeView_bestSeller = 'HomeView.bestSeller';
+  static const HomeView_ourProducts = 'HomeView.ourProducts';
   static const HomeView_product = 'HomeView.product';
+  static const HomeView_cart = 'HomeView.cart';
   static const HomeView_more = 'HomeView.more';
   static const HomeView = 'HomeView';
   static const CategoryProduct_avocado = 'CategoryProduct.avocado';

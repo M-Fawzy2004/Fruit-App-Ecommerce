@@ -100,7 +100,9 @@
       "discount" : "25% Discount",
       "shopNow" : "ShopNow",
       "bestSeller" : "Best Seller",
-      "product": "product",
+      "ourProducts": "Our Products",
+      "product" : "Products",
+      "cart" : "Cart",
       "more" : "More"
     },
 
