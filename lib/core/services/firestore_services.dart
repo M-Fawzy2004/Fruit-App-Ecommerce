@@ -18,47 +18,6 @@ class FirestoreServices implements DataBaseServices {
     }
   }
 
-  // @override
-  // Future<dynamic> getData({
-  //   required String path,
-  //   String? documentId,
-  //   Map<String, dynamic>? query,
-  //   bool supabase = false,
-  // }) async {
-  //   print("Fetching data from: $path"); // Debugging: Print the path
-  //   if (supabase) {
-  //     PostgrestTransformBuilder<PostgrestList> data =
-  //         _supbase.from(path).select('*');
-  //     if (query != null) {
-  //       if (query['orderBy'] != null) {
-  //         var orderByField = query['orderBy'];
-  //         var isDesending = query['descending'] ?? false;
-  //         data = data.order(orderByField, ascending: !isDesending);
-  //       }
-  //       if (query['limit'] != null) {
-  //         var limit = query['limit'];
-  //         data = data.limit(limit);
-  //       }
-  //     }
-  //     var response = await data;
-  //     print(
-  //       "Response from Supabase: $response",
-  //     ); // Debugging: Print the response
-  //     return response;
-  //   }
-  //   if (documentId != null) {
-  //     var data = await firestore.collection(path).doc(documentId).get();
-  //     print(
-  //         "Firestore document data: ${data.data()}"); // Debugging: Print Firestore data
-  //     return data.data() as Map<String, dynamic>;
-  //   } else {
-  //     var data = await firestore.collection(path).get();
-  //     print(
-  //         "Firestore collection data: ${data.docs.map((e) => e.data()).toList()}"); // Debugging: Print Firestore data
-  //     return data.docs.map((e) => e.data()).toList();
-  //   }
-  // }
-
   // get data auth firebase
   @override
   Future<dynamic> getData({
@@ -74,7 +33,6 @@ class FirestoreServices implements DataBaseServices {
         return data.docs.map((e) => e.data()).toList();
       }
     } catch (e) {
-      print("Firestore Error: $e");
       return null;
     }
   }
@@ -105,7 +63,6 @@ class FirestoreServices implements DataBaseServices {
       var response = await data;
       return response;
     } catch (e) {
-      print("Supabase Error: $e");
       return null;
     }
   }
