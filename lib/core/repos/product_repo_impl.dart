@@ -47,10 +47,10 @@ class ProductRepoImpl extends ProductRepo {
   @override
   Future<Either<Failures, List<ProductEntity>>> getProducts() async {
     try {
-      var data = await dataBaseServices.getData(
+      var data = await dataBaseServices.getDataSupbase(
         path: BackendEntpoint.getProducts,
       ) as List<Map<String, dynamic>>;
-      
+
       List<ProductModel> products =
           data.map((e) => ProductModel.fromJson(e)).toList();
 
