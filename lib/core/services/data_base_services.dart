@@ -5,12 +5,20 @@ abstract class DataBaseServices {
     String? documnetId,
   });
 
+
   Future<dynamic> getData({
     required String path,
     String? documentId,
-    Map<String, dynamic>? query,
-    bool supabase,
   });
+
+
+  Future<dynamic> getDataSupbase({
+    required String path,
+    String? documentId,
+    Map<String, dynamic>? query,
+  });
+
+
 
   Future<bool> checkDataExixts({
     required String path,

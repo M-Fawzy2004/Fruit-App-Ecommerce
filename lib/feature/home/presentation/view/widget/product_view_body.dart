@@ -3,7 +3,6 @@ import 'package:e_commerce_app/core/widget/product_view_header.dart';
 import 'package:e_commerce_app/core/widget/search_text_field.dart';
 import 'package:e_commerce_app/feature/best_selling/presentation/view/best_selling_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/header_product_view.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/widget/product_category_list_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/product_more_header.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/product_sliver_list_bloc_builder.dart';
 import 'package:e_commerce_app/generated/locale_keys.g.dart';
@@ -46,7 +45,6 @@ class _ProductViewBodyState extends State<ProductViewBody> {
               SizedBox(
                 height: size.height * 0.02,
               ),
-              ProductCategoryListView(),
               SizedBox(
                 height: size.height * 0.02,
               ),

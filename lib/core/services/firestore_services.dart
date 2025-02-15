@@ -4,7 +4,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 class FirestoreServices implements DataBaseServices {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
-  final _supbase = Supabase.instance.client;
+  final supbase = Supabase.instance.client;
   @override
   Future<void> addData({
     required String path,
@@ -58,43 +58,54 @@ class FirestoreServices implements DataBaseServices {
   //     return data.docs.map((e) => e.data()).toList();
   //   }
   // }
+
+  // get data auth firebase
   @override
   Future<dynamic> getData({
     required String path,
     String? documentId,
-    Map<String, dynamic>? query,
-    bool supabase = true,
   }) async {
     try {
-      if (supabase) {
-        PostgrestTransformBuilder<PostgrestList> data =
-            _supbase.from(path).select('*');
-
-        if (query != null) {
-          if (query['orderBy'] != null) {
-            var orderByField = query['orderBy'];
-            var isDescending = query['ascending'] ?? false;
-            data = data.order(orderByField, ascending: !isDescending);
-          }
-          if (query['limit'] != null) {
-            var limit = query['limit'];
-            data = data.limit(limit);
-          }
-        }
-
-        var response = await data;
-        return response;
+      if (documentId != null) {
+        var data = await firestore.collection(path).doc(documentId).get();
+        return data.data() as Map<String, dynamic>;
       } else {
-        if (documentId != null) {
-          var data = await firestore.collection(path).doc(documentId).get();
-          return data.data() as Map<String, dynamic>;
-        } else {
-          var data = await firestore.collection(path).get();
-          
-          return data.docs.map((e) => e.data()).toList();
-        }
+        var data = await firestore.collection(path).get();
+        return data.docs.map((e) => e.data()).toList();
       }
     } catch (e) {
+      print("Firestore Error: $e");
+      return null;
+    }
+  }
+
+  // get data supabase
+  @override
+  Future getDataSupbase({
+    required String path,
+    String? documentId,
+    Map<String, dynamic>? query,
+  }) async {
+    try {
+      PostgrestTransformBuilder<PostgrestList> data =
+          supbase.from(path).select('*');
+
+      if (query != null) {
+        if (query['orderBy'] != null) {
+          var orderByField = query['orderBy'];
+          var isDescending = query['ascending'] ?? false;
+          data = data.order(orderByField, ascending: !isDescending);
+        }
+        if (query['limit'] != null) {
+          var limit = query['limit'];
+          data = data.limit(limit);
+        }
+      }
+
+      var response = await data;
+      return response;
+    } catch (e) {
+      print("Supabase Error: $e");
       return null;
     }
   }

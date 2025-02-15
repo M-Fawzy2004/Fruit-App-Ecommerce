@@ -21,19 +21,16 @@ class _ProductCategoryListViewState extends State<ProductCategoryListView> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 120,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        physics: BouncingScrollPhysics(),
-        itemBuilder: (context, index) {
-          return CategoryItem(
-            image: categories[index]['image'],
-            title: categories[index]['title'],
-          );
-        },
-        itemCount: categories.length,
-      ),
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      physics: BouncingScrollPhysics(),
+      itemBuilder: (context, index) {
+        return CategoryItem(
+          image: categories[index]['image'],
+          title: categories[index]['title'],
+        );
+      },
+      itemCount: categories.length,
     );
   }
 }

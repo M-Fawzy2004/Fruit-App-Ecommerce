@@ -29,7 +29,7 @@ class HeaderProductView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: SvgPicture.asset(
-                Assets.imagesArrowSwapHorizontal,
+                Assets.imagesArrowSwapHorizontal1,
               ),
             ),
           ),

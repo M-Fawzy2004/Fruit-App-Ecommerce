@@ -6,6 +6,14 @@ class Assets {
   /// assets/images/apple.svg
   static const String imagesApple = "assets/images/apple.svg";
 
+  /// Assets for imagesArrowSwapHorizontal1
+  /// assets/images/arrow-swap-horizontal1.svg
+  static const String imagesArrowSwapHorizontal1 = "assets/images/arrow-swap-horizontal1.svg";
+
+  /// Assets for imagesAvocado
+  /// assets/images/Avocado.png
+  static const String imagesAvocado = "assets/images/Avocado.png";
+
   /// Assets for imagesBackgroundImageGreen
   /// assets/images/background_image_green.svg
   static const String imagesBackgroundImageGreen = "assets/images/background_image_green.svg";
@@ -18,6 +26,10 @@ class Assets {
   /// assets/images/background_page_view_item2.svg
   static const String imagesBackgroundPageViewItem2 = "assets/images/background_page_view_item2.svg";
 
+  /// Assets for imagesBnana
+  /// assets/images/bnana.png
+  static const String imagesBnana = "assets/images/bnana.png";
+
   /// Assets for imagesFacebook
   /// assets/images/facebook.svg
   static const String imagesFacebook = "assets/images/facebook.svg";
@@ -25,6 +37,10 @@ class Assets {
   /// Assets for imagesFiltterSearch
   /// assets/images/filtter_search.svg
   static const String imagesFiltterSearch = "assets/images/filtter_search.svg";
+
+  /// Assets for imagesFrawola
+  /// assets/images/frawola.png
+  static const String imagesFrawola = "assets/images/frawola.png";
 
   /// Assets for imagesFreepikCircles
   /// assets/images/freepik--Circles-.svg

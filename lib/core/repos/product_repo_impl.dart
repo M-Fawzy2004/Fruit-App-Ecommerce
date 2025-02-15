@@ -14,7 +14,7 @@ class ProductRepoImpl extends ProductRepo {
   @override
   Future<Either<Failures, List<ProductEntity>>> getBestSellingProducts() async {
     try {
-      var data = await dataBaseServices.getData(
+      var data = await dataBaseServices.getDataSupbase(
         path: BackendEntpoint.getProducts,
         query: {
           'limit': 10,
