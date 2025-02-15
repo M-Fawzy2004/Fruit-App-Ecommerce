@@ -1,7 +1,7 @@
 import 'package:e_commerce_app/core/cubit/product_cubit/get_product_cubit.dart';
 import 'package:e_commerce_app/core/helper/get_dummy_product.dart';
 import 'package:e_commerce_app/core/widget/custom_error.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/widget/product_sliver_list.dart';
+import 'package:e_commerce_app/feature/home/presentation/view/widget/product_sliver_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
