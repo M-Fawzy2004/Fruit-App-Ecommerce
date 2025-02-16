@@ -90,5 +90,7 @@ abstract class  LocaleKeys {
   static const CategoryProduct_watermelon = 'CategoryProduct.watermelon';
   static const CategoryProduct_pineapple = 'CategoryProduct.pineapple';
   static const CategoryProduct = 'CategoryProduct';
+  static const Success_title = 'Success.title';
+  static const Success = 'Success';
 
 }

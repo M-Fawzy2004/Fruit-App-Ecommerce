@@ -112,6 +112,11 @@
       "banana" : "Banana",
       "watermelon" : "Watermelon",
       "pineapple" : "Pineapple"
+    },
+
+    "Success" : {
+      "title" : "The product has been added successfully"
     }
+    
   }
   

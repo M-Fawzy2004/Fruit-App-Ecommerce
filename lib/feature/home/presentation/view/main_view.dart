@@ -2,11 +2,8 @@
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:e_commerce_app/feature/home/presentation/manager/cart_cubit/cart_cubit.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/cart_view.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/product_view.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_nested_scroll_view.dart';
+import 'package:e_commerce_app/feature/home/presentation/view/widget/main_view_body_bloc_consumer.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,29 +25,6 @@ class _MainViewState extends State<MainView> {
     Icon(CupertinoIcons.person_fill),
   ];
 
-  final screens = [
-    const CustomNestedScrollView(),
-    const ProductView(),
-    const CartView(),
-    Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text('الاعدادات'),
-          SizedBox(
-            height: 120,
-          ),
-          IconButton(
-            onPressed: () async {
-              await FirebaseAuth.instance.signOut();
-            },
-            icon: const Icon(Icons.logout),
-          ),
-        ],
-      ),
-    ),
-  ];
-
   int index = 0;
 
   void onItemTapped(int index) {
@@ -66,15 +40,7 @@ class _MainViewState extends State<MainView> {
       create: (context) => CartCubit(),
       child: Scaffold(
         bottomNavigationBar: methodCurvedNavigationBar(context),
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: IndexedStack(
-              index: index,
-              children: screens,
-            ),
-          ),
-        ),
+        body: MainViewBodyBlocConsumer(index: index),
       ),
     );
   }

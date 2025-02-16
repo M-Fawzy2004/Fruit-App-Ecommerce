@@ -112,6 +112,10 @@
     "banana" : "موز",
     "watermelon" : "بطيخ",
     "pineapple" : "أناناس"
+  },
+
+  "Success" : {
+    "title" : "تم أضافه المنتج بنجاح"
   }
 
 }
