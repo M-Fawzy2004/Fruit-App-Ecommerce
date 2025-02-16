@@ -1,20 +1,15 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
+import 'package:e_commerce_app/feature/home/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_cached_network_image.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_subtite_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class FruitItem extends StatefulWidget {
+class FruitItem extends StatelessWidget {
   const FruitItem({super.key, required this.productEntity});
 
   final ProductEntity productEntity;
-
-  @override
-  State<FruitItem> createState() => _FruitItemState();
-}
-
-class _FruitItemState extends State<FruitItem> {
-  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +24,10 @@ class _FruitItemState extends State<FruitItem> {
             top: 0,
             right: 0,
             child: IconButton(
-              onPressed: () {
-                setState(() {
-                  isFavorite = !isFavorite;
-                });
-              },
+              onPressed: () {},
               icon: Icon(
-                isFavorite ? Icons.favorite : Icons.favorite_outline,
-                color: isFavorite ? Colors.red : Colors.grey,
+                Icons.favorite_outline,
+                color: Colors.grey,
               ),
             ),
           ),
@@ -47,14 +38,14 @@ class _FruitItemState extends State<FruitItem> {
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 CustomCachedNetworkImage(
-                  imageUrl: widget.productEntity.imageUrl ?? '',
+                  imageUrl: productEntity.imageUrl ?? '',
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.007,
                 ),
                 ListTile(
                   title: Text(
-                    widget.productEntity.name,
+                    productEntity.name,
                     maxLines: 1,
                     style: Styles.fontText16(context).copyWith(
                       fontWeight: FontWeight.w800,
@@ -62,11 +53,15 @@ class _FruitItemState extends State<FruitItem> {
                     ),
                   ),
                   subtitle:
-                      CustomSubtitleText(productEntity: widget.productEntity),
+                      CustomSubtitleText(productEntity: productEntity),
                   trailing: CircleAvatar(
                     backgroundColor: Color(0xff1B5E37),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.read<CartCubit>().addProduct(
+                              productEntity,
+                            );
+                      },
                       icon: Icon(
                         Icons.add,
                         color: Theme.of(context).colorScheme.tertiary,
