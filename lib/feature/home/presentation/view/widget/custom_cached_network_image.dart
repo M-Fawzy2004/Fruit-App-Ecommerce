@@ -1,14 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/widget/fruit_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomCachedNetworkImage extends StatelessWidget {
   const CustomCachedNetworkImage({
     super.key,
-    required this.widget,
+    required this.imageUrl,
   });
 
-  final FruitItem widget;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class CustomCachedNetworkImage extends StatelessWidget {
       child: CachedNetworkImage(
         height: MediaQuery.sizeOf(context).height * .12,
         width: MediaQuery.sizeOf(context).width * .4,
-        imageUrl: widget.productEntity.imageUrl ?? '',
+        imageUrl:imageUrl,
         fit: BoxFit.cover,
         placeholder: (context, url) => Icon(
           Icons.image,

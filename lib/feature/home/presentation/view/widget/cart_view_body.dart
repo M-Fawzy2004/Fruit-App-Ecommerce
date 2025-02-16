@@ -15,41 +15,39 @@ class CartViewBody extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
-        Padding(
-          padding:
-              EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height * 0.1),
-          child: CustomScrollView(
-            physics: const BouncingScrollPhysics(),
-            slivers: [
-              SliverToBoxAdapter(
-                child: Column(
-                  children: [
-                    ProductViewHeader(
-                      title: LocaleKeys.HomeView_cart.tr(),
-                      isVisible: false,
-                      isVisibleNotification: false,
-                    ),
-                    SizedBox(height: size.height * 0.02),
-                    Container(
-                      height: MediaQuery.sizeOf(context).height * 0.04,
-                      width: double.infinity,
-                      color: Color(0xffEBF9F1),
-                      child: Center(
-                        child: Text(
-                          'لديك 3 منتجات في سله التسوق',
-                          style: Styles.fontText13(context).copyWith(
-                            color: activeDotColor,
-                          ),
+        CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  ProductViewHeader(
+                    title: LocaleKeys.HomeView_cart.tr(),
+                    isVisible: false,
+                    isVisibleNotification: false,
+                  ),
+                  SizedBox(height: size.height * 0.02),
+                  Container(
+                    height: MediaQuery.sizeOf(context).height * 0.04,
+                    width: double.infinity,
+                    color: Color(0xffEBF9F1),
+                    child: Center(
+                      child: Text(
+                        'لديك 3 منتجات في سله التسوق',
+                        style: Styles.fontText13(context).copyWith(
+                          color: activeDotColor,
                         ),
                       ),
                     ),
-                    SizedBox(height: size.height * 0.02),
-                  ],
-                ),
+                  ),
+                  SizedBox(height: size.height * 0.02),
+                ],
               ),
-              CartViewSliverGrid(),
-            ],
-          ),
+            ),
+            CartViewSliverGrid(
+              cartEntity: [],
+            ),
+          ],
         ),
         Positioned(
           right: 0,

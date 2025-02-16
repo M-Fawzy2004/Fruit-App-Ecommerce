@@ -46,7 +46,9 @@ class _FruitItemState extends State<FruitItem> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
-                CustomCachedNetworkImage(widget: widget),
+                CustomCachedNetworkImage(
+                  imageUrl: widget.productEntity.imageUrl ?? '',
+                ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.007,
                 ),

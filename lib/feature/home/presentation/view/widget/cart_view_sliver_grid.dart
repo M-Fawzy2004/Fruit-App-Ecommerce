@@ -1,8 +1,11 @@
+import 'package:e_commerce_app/feature/home/entities/cart_item_entity.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/cart_item.dart';
 import 'package:flutter/material.dart';
 
 class CartViewSliverGrid extends StatelessWidget {
-  const CartViewSliverGrid({super.key});
+  const CartViewSliverGrid({super.key, required this.cartEntity});
+
+  final List<CartItemEntity> cartEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +16,11 @@ class CartViewSliverGrid extends StatelessWidget {
         crossAxisSpacing: 10,
         childAspectRatio: 272 / 100,
       ),
-      itemCount: 10,
+      itemCount: cartEntity.length,
       itemBuilder: (context, index) {
-        return CartItem();
+        return CartItem(
+          cartEntity: cartEntity[index],
+        );
       },
     );
   }
