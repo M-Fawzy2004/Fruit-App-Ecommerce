@@ -115,7 +115,9 @@
     },
 
     "Success" : {
-      "title" : "The product has been added successfully"
+      "title" : "The product has been added successfully",
+      "payment" : "Payment",
+      "pound" : "Pound"
     }
     
   }

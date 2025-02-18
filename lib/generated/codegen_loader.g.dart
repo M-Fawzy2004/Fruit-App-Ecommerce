@@ -117,7 +117,9 @@ class CodegenLoader extends AssetLoader{
     "pineapple": "أناناس"
   },
   "Success": {
-    "title": "تم أضافه المنتج بنجاح"
+    "title": "تم أضافه المنتج بنجاح",
+    "payment": "الدفع",
+    "pound": "جنيه"
   }
 };
 static const Map<String,dynamic> _en = {
@@ -223,7 +225,9 @@ static const Map<String,dynamic> _en = {
     "pineapple": "Pineapple"
   },
   "Success": {
-    "title": "The product has been added successfully"
+    "title": "The product has been added successfully",
+    "payment": "Payment",
+    "pound": "Pound"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};
