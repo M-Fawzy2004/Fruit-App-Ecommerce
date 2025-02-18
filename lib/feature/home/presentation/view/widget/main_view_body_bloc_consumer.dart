@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/constant.dart';
 import 'package:e_commerce_app/core/helper/function/custom_snak_bar.dart';
 import 'package:e_commerce_app/feature/home/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/main_view_body.dart';
@@ -22,7 +23,7 @@ class MainViewBodyBlocConsumer extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
             buildSnakBarError(
               LocaleKeys.Success_titleAdd.tr(),
-              backgroundColor: Colors.green,
+              backgroundColor: activeDotColor,
             ),
           );
         }
@@ -30,7 +31,7 @@ class MainViewBodyBlocConsumer extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
             buildSnakBarError(
               LocaleKeys.Success_titleRemoved.tr(),
-              backgroundColor: Colors.green,
+              backgroundColor: activeDotColor,
             ),
           );
         }
