@@ -117,7 +117,8 @@ class CodegenLoader extends AssetLoader{
     "pineapple": "أناناس"
   },
   "Success": {
-    "title": "تم أضافه المنتج بنجاح",
+    "titleAdd": "تم أضافه المنتج بنجاح",
+    "titleRemoved": "تم حذف المنتج بنجاح",
     "payment": "الدفع",
     "pound": "جنيه"
   }
@@ -225,7 +226,8 @@ static const Map<String,dynamic> _en = {
     "pineapple": "Pineapple"
   },
   "Success": {
-    "title": "The product has been added successfully",
+    "titleAdd": "The product has been added successfully",
+    "titleRemoved": "The product has been removed successfully",
     "payment": "Payment",
     "pound": "Pound"
   }

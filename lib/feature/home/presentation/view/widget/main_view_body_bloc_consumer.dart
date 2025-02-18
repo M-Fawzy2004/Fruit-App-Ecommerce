@@ -18,10 +18,18 @@ class MainViewBodyBlocConsumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<CartCubit, CartState>(
       listener: (context, state) {
-        if (state is CartAddedProduct) {
+        if (state is CartItemAdded) {
           ScaffoldMessenger.of(context).showSnackBar(
             buildSnakBarError(
-              LocaleKeys.Success_title.tr(),
+              LocaleKeys.Success_titleAdd.tr(),
+              backgroundColor: Colors.green,
+            ),
+          );
+        }
+        if (state is CartItemRemoved) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            buildSnakBarError(
+              LocaleKeys.Success_titleRemoved.tr(),
               backgroundColor: Colors.green,
             ),
           );

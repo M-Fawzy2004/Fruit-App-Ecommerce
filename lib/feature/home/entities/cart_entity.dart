@@ -1,7 +1,7 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/feature/home/entities/cart_item_entity.dart';
 
-class CartEntity {
+class CartEntity   {
   final List<CartItemEntity> cartItems;
 
   CartEntity(this.cartItems);
@@ -10,7 +10,11 @@ class CartEntity {
     cartItems.add(cartItem);
   }
 
-  calculateTotalPrice(){
+  removeCartItem(CartItemEntity cartItem) {
+    cartItems.remove(cartItem);
+  }
+
+  calculateTotalPrice() {
     num totalPrice = 0;
     for (var cartItem in cartItems) {
       totalPrice += cartItem.calculateTotalPrice();
@@ -38,4 +42,5 @@ class CartEntity {
       count: 1,
     );
   }
+
 }
