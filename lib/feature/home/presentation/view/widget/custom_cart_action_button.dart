@@ -1,7 +1,9 @@
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/feature/home/entities/cart_item_entity.dart';
+import 'package:e_commerce_app/feature/home/presentation/manager/cart_item/cart_item_cubit.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/cart_item_action_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomCartActionButton extends StatelessWidget {
   const CustomCartActionButton({
@@ -16,7 +18,10 @@ class CustomCartActionButton extends StatelessWidget {
     return Row(
       children: [
         CartItemActionButton(
-          onTap: () {},
+          onTap: () {
+            cartEntity.incrasedCount();
+            context.read<CartItemCubit>().updateCartItem(cartEntity);
+          },
           icon: Icons.add,
           containerColor: Color(0xff5DB957),
         ),
@@ -40,7 +45,12 @@ class CustomCartActionButton extends StatelessWidget {
           ),
         ),
         CartItemActionButton(
-          onTap: () {},
+          onTap: () {
+            if (cartEntity.count > 1) {
+              cartEntity.decreasedCount();
+              context.read<CartItemCubit>().updateCartItem(cartEntity);
+            }
+          },
           icon: Icons.remove,
           containerColor: Theme.of(context).colorScheme.tertiary,
         ),
