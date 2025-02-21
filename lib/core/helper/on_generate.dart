@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/feature/auth/presentation/view/signup_view.dart';
 import 'package:e_commerce_app/feature/best_selling/presentation/view/best_selling_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/cart_view.dart';
+import 'package:e_commerce_app/feature/home/presentation/view/item_details_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/main_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/product_view.dart';
 import 'package:e_commerce_app/feature/splash/presentation/view/splash_view.dart';
@@ -41,6 +42,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     // cart view
     case CartView.routeName:
       return MaterialPageRoute(builder: (context) => CartView());
+
+    // item details view
+    case ItemDetailsView.routeName:
+      return MaterialPageRoute(builder: (context) => ItemDetailsView());
 
     // default
     default:

@@ -52,8 +52,7 @@ class FruitItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  subtitle:
-                      CustomSubtitleText(productEntity: productEntity),
+                  subtitle: CustomSubtitleText(productEntity: productEntity),
                   trailing: CircleAvatar(
                     backgroundColor: Color(0xff1B5E37),
                     child: IconButton(
