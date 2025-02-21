@@ -1,5 +1,4 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
-import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/core/utils/curved_clipper.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -23,16 +22,16 @@ class ProductImageDetailsHeader extends StatelessWidget {
         ClipPath(
           clipper: CurvedClipper(),
           child: Container(
-            height: screenHeight * 0.55,
+            height: screenHeight * 0.38,
             color: Theme.of(context).colorScheme.tertiary,
           ),
         ),
         Positioned(
-          top: screenHeight * 0.15,
+          top: screenHeight * 0,
           right: 0,
           left: 0,
           child: CustomCachedNetworkImage(
-            height: screenHeight * 0.25,
+            height: screenHeight * 0.35,
             imageUrl: productEntity.imageUrl!,
           ),
         ),
@@ -57,15 +56,6 @@ class ProductImageDetailsHeader extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ),
-        Positioned(
-          top: screenHeight * 0.49,
-          right: isArabic ? screenHeight * 0.014 : null,
-          left: isArabic ? null : screenHeight * 0.014,
-          child: Text(
-            productEntity.name,
-            style: Styles.fontText19(context),
           ),
         ),
       ],

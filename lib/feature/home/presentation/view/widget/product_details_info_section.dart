@@ -23,6 +23,13 @@ class ProductDetailsInfoSection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
+                    productEntity.name,
+                    style: Styles.fontText19(context),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.sizeOf(context).height * 0.01,
+                  ),
+                  Text(
                     '${productEntity.price.toString()} / ${productEntity.unitAmount} كيلو',
                     style: Styles.fontText16(context).copyWith(
                       color: Color(0xffF4A91F),
@@ -57,7 +64,7 @@ class ProductDetailsInfoSection extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width * 0.02,
               ),
               Text(
-                '(${productEntity.avgRating.toString()})',
+                '(${productEntity.avgRating})',
                 style: Styles.fontText13(context).copyWith(
                   color: Theme.of(context).colorScheme.inversePrimary,
                 ),

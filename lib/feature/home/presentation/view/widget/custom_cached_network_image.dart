@@ -7,11 +7,13 @@ class CustomCachedNetworkImage extends StatelessWidget {
     required this.imageUrl,
     this.onTap,
     this.height,
+    this.width,
   });
 
   final String imageUrl;
   final void Function()? onTap;
   final double? height;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class CustomCachedNetworkImage extends StatelessWidget {
         onTap: onTap,
         child: CachedNetworkImage(
           height: height ?? MediaQuery.sizeOf(context).height * .12,
-          width: MediaQuery.sizeOf(context).width * .4,
+          width: width ?? MediaQuery.sizeOf(context).width * .4,
           imageUrl: imageUrl,
           fit: BoxFit.cover,
           placeholder: (context, url) => Icon(

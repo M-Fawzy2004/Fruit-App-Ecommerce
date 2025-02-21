@@ -30,7 +30,9 @@ class ItemDetailsViewBody extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height * .03,
           ),
         ),
-        DetailsFeatureCardSliverGrid(),
+        DetailsFeatureCardSliverGrid(
+          productEntity: productEntity,
+        ),
         SliverToBoxAdapter(
           child: SizedBox(
             height: MediaQuery.sizeOf(context).height * .015,
