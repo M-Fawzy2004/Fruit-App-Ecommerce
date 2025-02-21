@@ -38,6 +38,10 @@ class Assets {
   /// assets/images/bnana.png
   static const String imagesBnana = "assets/images/bnana.png";
 
+  /// Assets for imagesCalorey
+  /// assets/images/calorey.png
+  static const String imagesCalorey = "assets/images/calorey.png";
+
   /// Assets for imagesFacebook
   /// assets/images/facebook.svg
   static const String imagesFacebook = "assets/images/facebook.svg";
@@ -86,9 +90,17 @@ class Assets {
   /// assets/images/notification.svg
   static const String imagesNotification = "assets/images/notification.svg";
 
+  /// Assets for imagesOrganic
+  /// assets/images/organic.png
+  static const String imagesOrganic = "assets/images/organic.png";
+
   /// Assets for imagesPineappleCuate
   /// assets/images/pineapple-cuate.png
   static const String imagesPineappleCuate = "assets/images/pineapple-cuate.png";
+
+  /// Assets for imagesPower
+  /// assets/images/power.png
+  static const String imagesPower = "assets/images/power.png";
 
   /// Assets for imagesProfileImage
   /// assets/images/profile_image.svg
@@ -101,6 +113,10 @@ class Assets {
   /// Assets for imagesSearchNormal
   /// assets/images/search-normal.svg
   static const String imagesSearchNormal = "assets/images/search-normal.svg";
+
+  /// Assets for imagesStar
+  /// assets/images/star.png
+  static const String imagesStar = "assets/images/star.png";
 
   /// Assets for imagesTestImage
   /// assets/images/test_image.png

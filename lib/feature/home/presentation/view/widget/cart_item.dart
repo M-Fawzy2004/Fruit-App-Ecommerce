@@ -38,10 +38,10 @@ class CartItem extends StatelessWidget {
             children: [
               IntrinsicHeight(
                 child: Container(
-                  height: MediaQuery.sizeOf(context).height * 0.15,
+                  height: MediaQuery.sizeOf(context).height * 0.16,
                   width: MediaQuery.sizeOf(context).width * 0.2,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(11),
                     color: Theme.of(context).colorScheme.tertiary,
                   ),
                   child: CustomCachedNetworkImage(
