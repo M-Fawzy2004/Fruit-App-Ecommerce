@@ -1,25 +1,26 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/item_details_view.dart';
 import 'package:flutter/material.dart';
 
 class CustomCachedNetworkImage extends StatelessWidget {
   const CustomCachedNetworkImage({
     super.key,
     required this.imageUrl,
+    this.onTap,
+    this.height,
   });
 
   final String imageUrl;
+  final void Function()? onTap;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, ItemDetailsView.routeName);
-        },
+        onTap: onTap,
         child: CachedNetworkImage(
-          height: MediaQuery.sizeOf(context).height * .12,
+          height: height ?? MediaQuery.sizeOf(context).height * .12,
           width: MediaQuery.sizeOf(context).width * .4,
           imageUrl: imageUrl,
           fit: BoxFit.cover,

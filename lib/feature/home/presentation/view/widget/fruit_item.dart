@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/feature/home/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:e_commerce_app/feature/home/presentation/view/item_details_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_cached_network_image.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_subtite_text.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +39,13 @@ class FruitItem extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 CustomCachedNetworkImage(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      ItemDetailsView.routeName,
+                      arguments: productEntity,
+                    );
+                  },
                   imageUrl: productEntity.imageUrl ?? '',
                 ),
                 SizedBox(

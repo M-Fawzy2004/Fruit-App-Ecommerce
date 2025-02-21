@@ -1,13 +1,17 @@
+import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
-import 'package:e_commerce_app/core/utils/assets.dart';
 import 'package:e_commerce_app/core/utils/curved_clipper.dart';
+import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ProductImageDetailsHeader extends StatelessWidget {
   const ProductImageDetailsHeader({
     super.key,
+    required this.productEntity,
   });
+
+  final ProductEntity productEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +28,12 @@ class ProductImageDetailsHeader extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: screenHeight * 0.08,
+          top: screenHeight * 0.15,
           right: 0,
           left: 0,
-          child: Image.asset(
-            Assets.imagesImagetesttt1,
+          child: CustomCachedNetworkImage(
+            height: screenHeight * 0.25,
+            imageUrl: productEntity.imageUrl!,
           ),
         ),
         Positioned(
@@ -59,7 +64,7 @@ class ProductImageDetailsHeader extends StatelessWidget {
           right: isArabic ? screenHeight * 0.014 : null,
           left: isArabic ? null : screenHeight * 0.014,
           child: Text(
-            'بطيخ احمر طازج',
+            productEntity.name,
             style: Styles.fontText19(context),
           ),
         ),

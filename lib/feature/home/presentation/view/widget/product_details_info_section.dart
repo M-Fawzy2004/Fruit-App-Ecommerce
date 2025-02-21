@@ -1,11 +1,15 @@
 import 'package:e_commerce_app/constant.dart';
+import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsInfoSection extends StatelessWidget {
   const ProductDetailsInfoSection({
     super.key,
+    required this.productEntity,
   });
+
+  final ProductEntity productEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ class ProductDetailsInfoSection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '20جنية / الكيلو',
+                    '${productEntity.price.toString()} / ${productEntity.unitAmount} كيلو',
                     style: Styles.fontText16(context).copyWith(
                       color: Color(0xffF4A91F),
                     ),
@@ -44,7 +48,7 @@ class ProductDetailsInfoSection extends StatelessWidget {
                 ),
               ),
               Text(
-                '4.5',
+                productEntity.ratingCount.toString(),
                 style: Styles.fontText13(context).copyWith(
                   color: Theme.of(context).colorScheme.primary,
                 ),
@@ -53,7 +57,7 @@ class ProductDetailsInfoSection extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width * 0.02,
               ),
               Text(
-                '(+35)',
+                '(${productEntity.avgRating.toString()})',
                 style: Styles.fontText13(context).copyWith(
                   color: Theme.of(context).colorScheme.inversePrimary,
                 ),
@@ -75,7 +79,7 @@ class ProductDetailsInfoSection extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height * 0.015,
           ),
           Text(
-            'ينتمي إلى الفصيلة القرعية ولثمرته لُب حلو المذاق وقابل للأكل، وبحسب علم النبات فهي تعتبر ثمار لبيّة، تستعمل لفظة البطيخ للإشارة إلى النبات نفسه أو إلى الثمرة تحديداً',
+            productEntity.desc,
             style: Styles.fontText13(context),
           ),
         ],

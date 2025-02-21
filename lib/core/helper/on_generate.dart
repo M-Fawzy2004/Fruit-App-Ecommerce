@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/signup_view.dart';
 import 'package:e_commerce_app/feature/best_selling/presentation/view/best_selling_view.dart';
 import 'package:e_commerce_app/feature/checkout/presentation/view/checkout_view.dart';
@@ -46,7 +47,12 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
     // item details view
     case ItemDetailsView.routeName:
-      return MaterialPageRoute(builder: (context) => ItemDetailsView());
+      final product = settings.arguments as ProductEntity?;
+      if (product != null) {
+        return MaterialPageRoute(
+            builder: (context) => ItemDetailsView(productEntity: product));
+      }
+      return MaterialPageRoute(builder: (context) => Scaffold());
 
     // chechout view
     case CheckoutView.routeName:
