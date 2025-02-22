@@ -19,7 +19,7 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
   final items = [
-    Icon(CupertinoIcons.house_fill, color: Colors.red),
+    Icon(CupertinoIcons.house_fill),
     Icon(CupertinoIcons.square_grid_2x2),
     Icon(CupertinoIcons.cart_fill),
     Icon(CupertinoIcons.person_fill),

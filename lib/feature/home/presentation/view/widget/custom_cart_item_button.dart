@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/widget/custom_button.dart';
+import 'package:e_commerce_app/feature/checkout/presentation/view/checkout_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:e_commerce_app/feature/home/presentation/manager/cart_item/cart_item_cubit.dart';
 import 'package:e_commerce_app/generated/locale_keys.g.dart';
@@ -24,7 +25,9 @@ class CustomCartItemButton extends StatelessWidget {
         return CustomButton(
           text:
               '${LocaleKeys.Success_payment.tr()} ${context.watch<CartCubit>().cartEntity.calculateTotalPrice()} ${LocaleKeys.Success_pound.tr()}',
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, CheckoutView.routeName);
+          },
         );
       },
     );

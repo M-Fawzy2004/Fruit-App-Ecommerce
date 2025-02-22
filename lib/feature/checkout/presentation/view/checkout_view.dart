@@ -9,7 +9,12 @@ class CheckoutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CheckoutViewBody(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
+        child: SafeArea(
+          child: CheckoutViewBody(),
+        ),
+      ),
     );
   }
 }

@@ -121,6 +121,16 @@ class CodegenLoader extends AssetLoader{
     "titleRemoved": "تم حذف المنتج بنجاح",
     "payment": "الدفع",
     "pound": "جنيه"
+  },
+  "Shopping": {
+    "shopping": "الشحن",
+    "address": "العنوان",
+    "payment": "الدفع",
+    "review": "المرجعه",
+    "cash": "الدفع عند الاستلام",
+    "delivery": "التسليم من المكان",
+    "online": "ألدفع أونلاين",
+    "paymentMethod": "يرجي تحديد طريقه الدفع"
   }
 };
 static const Map<String,dynamic> _en = {
@@ -230,6 +240,16 @@ static const Map<String,dynamic> _en = {
     "titleRemoved": "The product has been removed successfully",
     "payment": "Payment",
     "pound": "Pound"
+  },
+  "Shopping": {
+    "shopping": "الشحن",
+    "address": "العنوان",
+    "payment": "الدفع",
+    "review": "المرجعه",
+    "cash": "الدفع عند الاستلام",
+    "delivery": "التسليم من المكان",
+    "online": "ألدفع أونلاين",
+    "paymentMethod": "يرجي تحديد طريقه الدفع"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};

@@ -13,6 +13,7 @@ class CustomTextFormField extends StatefulWidget {
     this.prefixIcon,
     this.onSaved,
     this.hintStyle,
+    this.keyboardType,
   });
 
   final String? hintText;
@@ -20,6 +21,7 @@ class CustomTextFormField extends StatefulWidget {
   final bool isPassword;
   final IconData? prefixIcon;
   final Function(String?)? onSaved;
+  final TextInputType? keyboardType;
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -55,15 +57,19 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         }
       },
       obscureText: widget.isPassword ? _isObscured : false,
+      keyboardType: widget.keyboardType,
       style: Styles.textInputStyle(context),
       decoration: InputDecoration(
         fillColor: Theme.of(context).colorScheme.tertiary,
         filled: true,
-        contentPadding: const EdgeInsets.all(20),
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 12,
+          horizontal: 15,
+        ),
         hintText: widget.hintText,
         hintStyle: Styles.titleLoginStyle(),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(10),
         ),
         enabledBorder: methodEnableOutlineBorder(),
         focusedBorder: methodFocusOutlineBorder(),

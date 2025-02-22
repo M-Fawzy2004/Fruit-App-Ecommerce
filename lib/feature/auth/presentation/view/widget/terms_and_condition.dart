@@ -7,11 +7,13 @@ import 'package:flutter/material.dart';
 class TermsAndCondition extends StatelessWidget {
   final bool isAccepted;
   final ValueChanged<bool> onChanged;
+  final Widget? textWidget;
 
   const TermsAndCondition({
     super.key,
     required this.isAccepted,
     required this.onChanged,
+    this.textWidget,
   });
 
   @override
@@ -32,28 +34,30 @@ class TermsAndCondition extends StatelessWidget {
         ),
 
         // size box height and text rich
-        SizedBox(
-          width: MediaQuery.sizeOf(context).width * 0.7,
-          child: Text.rich(
-            TextSpan(
-              children: [
-                // text span 1
-                TextSpan(
-                  text: LocaleKeys.SignUp_agreeText1.tr(),
-                  style: Styles.fontText13(context),
-                ),
+        textWidget != null
+            ? textWidget!
+            : SizedBox(
+                width: MediaQuery.sizeOf(context).width * 0.7,
+                child: Text.rich(
+                  TextSpan(
+                    children: [
+                      // text span 1
+                      TextSpan(
+                        text: LocaleKeys.SignUp_agreeText1.tr(),
+                        style: Styles.fontText13(context),
+                      ),
 
-                // text span 2
-                TextSpan(
-                  text: LocaleKeys.SignUp_agreeText2.tr(),
-                  style: Styles.fontText13(context).copyWith(
-                    color: const Color(0xff1B5E37),
+                      // text span 2
+                      TextSpan(
+                        text: LocaleKeys.SignUp_agreeText2.tr(),
+                        style: Styles.fontText13(context).copyWith(
+                          color: const Color(0xff1B5E37),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
-          ),
-        ),
+              ),
       ],
     );
   }

@@ -26,11 +26,23 @@ class ProductViewHeader extends StatelessWidget {
         if (isVisible)
           Align(
             alignment: isArabic ? Alignment.centerRight : Alignment.centerLeft,
-            child: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_back_ios),
+            child: Container(
+              height: MediaQuery.sizeOf(context).height * 0.05,
+              width: MediaQuery.sizeOf(context).width * 0.1,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Theme.of(context).colorScheme.tertiary,
+              ),
+              child: FittedBox(
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(
+                    Icons.arrow_back_ios_new_outlined,
+                  ),
+                ),
+              ),
             ),
           ),
         Text(

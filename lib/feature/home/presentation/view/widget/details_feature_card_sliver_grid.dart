@@ -24,13 +24,14 @@ class DetailsFeatureCardSliverGrid extends StatelessWidget {
       },
       {
         'image': Assets.imagesCalorey,
-        'title': "اوجانيك",
+        'title': "100 جرام",
         "name": productEntity.numberOfCalories.toString(),
       },
       {
         'image': Assets.imagesStar,
         'title': 'Reviews',
-        "name": productEntity.reviews.length.toString(),
+        "name":
+            '(${productEntity.avgRating.toString()}) ${productEntity.reviews.length.toString()} ',
       },
     ];
     return SliverGrid.builder(

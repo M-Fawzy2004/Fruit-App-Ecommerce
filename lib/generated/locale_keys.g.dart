@@ -95,5 +95,14 @@ abstract class  LocaleKeys {
   static const Success_payment = 'Success.payment';
   static const Success_pound = 'Success.pound';
   static const Success = 'Success';
+  static const Shopping_shopping = 'Shopping.shopping';
+  static const Shopping_address = 'Shopping.address';
+  static const Shopping_payment = 'Shopping.payment';
+  static const Shopping_review = 'Shopping.review';
+  static const Shopping_cash = 'Shopping.cash';
+  static const Shopping_delivery = 'Shopping.delivery';
+  static const Shopping_online = 'Shopping.online';
+  static const Shopping_paymentMethod = 'Shopping.paymentMethod';
+  static const Shopping = 'Shopping';
 
 }

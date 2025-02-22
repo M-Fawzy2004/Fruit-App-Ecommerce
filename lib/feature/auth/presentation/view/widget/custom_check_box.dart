@@ -22,7 +22,9 @@ class CustomCheckBox extends StatelessWidget {
         height: 25,
         width: 25,
         decoration: BoxDecoration(
-          color: isChecker ? activeDotColor : Colors.grey[300],
+          color: isChecker
+              ? activeDotColor
+              : Theme.of(context).colorScheme.tertiary,
           borderRadius: BorderRadius.circular(8),
         ),
         child: isChecker
