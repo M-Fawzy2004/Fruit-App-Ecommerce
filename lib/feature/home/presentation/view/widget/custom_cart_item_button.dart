@@ -14,9 +14,9 @@ class CustomCartItemButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cartItems = context.watch<CartCubit>().cartEntity.cartItems;
+    final cartItems = context.watch<CartCubit>().cartEntity;
 
-    if (cartItems.isEmpty) {
+    if (cartItems.cartItems.isEmpty) {
       return const SizedBox.shrink();
     }
 
@@ -26,7 +26,11 @@ class CustomCartItemButton extends StatelessWidget {
           text:
               '${LocaleKeys.Success_payment.tr()} ${context.watch<CartCubit>().cartEntity.calculateTotalPrice()} ${LocaleKeys.Success_pound.tr()}',
           onTap: () {
-            Navigator.pushNamed(context, CheckoutView.routeName);
+            Navigator.pushNamed(
+              context,
+              CheckoutView.routeName,
+              arguments: cartItems,
+            );
           },
         );
       },

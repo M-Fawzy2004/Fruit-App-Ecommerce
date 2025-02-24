@@ -31,7 +31,13 @@ class CustomDifferentPayment extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(12),
           ),
-          child: Image.asset(image),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              image,
+              fit: BoxFit.fill,
+            ),
+          ),
         ),
       ),
     );

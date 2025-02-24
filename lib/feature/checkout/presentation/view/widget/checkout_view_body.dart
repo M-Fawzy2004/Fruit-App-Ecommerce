@@ -15,18 +15,28 @@ class CheckoutViewBody extends StatefulWidget {
 
 class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   PageController pageController = PageController();
-
+  ValueNotifier<AutovalidateMode> valueNotifier =
+      ValueNotifier(AutovalidateMode.disabled);
   @override
   void initState() {
     pageController = PageController(initialPage: 0);
+    pageController.addListener(() {
+      setState(() {
+        currentPageIndex = pageController.page!.round();
+      });
+    });
     super.initState();
   }
 
   @override
   void dispose() {
     pageController.dispose();
+    valueNotifier.dispose();
     super.dispose();
   }
+
+  int currentPageIndex = 0;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -41,20 +51,30 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
         SizedBox(
           height: screenHeight * 0.02,
         ),
-        CheckoutSteps(),
+        CheckoutSteps(
+          currentPageIndex: currentPageIndex,
+          pageController: pageController,
+        ),
         SizedBox(
           height: screenHeight * 0.02,
         ),
         Expanded(
-          child: CheckOutStepPageView(pageController: pageController),
+          child: CheckOutStepPageView(
+            pageController: pageController,
+            formKey: _formKey,
+            valueListenable: valueNotifier,
+          ),
         ),
         CustomButton(
-          text: 'التالي',
+          text: getButtonNextText(currentPageIndex),
           onTap: () {
-            pageController.nextPage(
-              duration: Duration(milliseconds: 300),
-              curve: Curves.easeInOut,
-            );
+            if (currentPageIndex == 0) {
+              _handleShippingSection();
+            } else if (currentPageIndex == 1) {
+              _handleAddressSection();
+            } else if (currentPageIndex == 2) {
+              _handleShippingSection();
+            }
           },
         ),
         SizedBox(
@@ -62,5 +82,40 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
         ),
       ],
     );
+  }
+
+  //  handlePaymentSection
+  void _handleShippingSection() {
+    pageController.nextPage(
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeIn,
+    );
+  }
+
+  //  getButtonNextText
+  String getButtonNextText(int currentPageIndex) {
+    switch (currentPageIndex) {
+      case 0:
+        return 'التالي';
+      case 1:
+        return 'التالي';
+      case 2:
+        return 'الدفع بواسطه Card';
+      default:
+        return 'الدفع';
+    }
+  }
+
+  //  handleAddressSection
+  void _handleAddressSection() {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      pageController.nextPage(
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeIn,
+      );
+    } else {
+      valueNotifier.value = AutovalidateMode.always;
+    }
   }
 }

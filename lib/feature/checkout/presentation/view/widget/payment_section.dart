@@ -1,6 +1,4 @@
 import 'package:e_commerce_app/core/utils/app_styles.dart';
-import 'package:e_commerce_app/feature/auth/presentation/view/widget/custom_form_text_field.dart';
-import 'package:e_commerce_app/feature/auth/presentation/view/widget/terms_and_condition.dart';
 import 'package:e_commerce_app/feature/checkout/presentation/view/widget/step_different_payment.dart';
 import 'package:flutter/material.dart';
 
@@ -42,50 +40,50 @@ class _PaymentSectionState extends State<PaymentSection> {
           SizedBox(
             height: screenHeight * .045,
           ),
-          CustomTextFormField(hintText: 'اسم حامل البطاقه', isPassword: false),
-          SizedBox(
-            height: screenHeight * .016,
-          ),
-          CustomTextFormField(hintText: 'رقم البطاقة', isPassword: false),
-          SizedBox(
-            height: screenHeight * .016,
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: CustomTextFormField(
-                  keyboardType: TextInputType.number,
-                  hintText: 'تاريخ الصلاحيه',
-                  isPassword: false,
-                ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(
-                child: CustomTextFormField(
-                  keyboardType: TextInputType.number,
-                  hintText: 'CVV',
-                  isPassword: false,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: screenHeight * .016,
-          ),
-          TermsAndCondition(
-            textWidget: Text(
-              'جعل البطاقة افتراضية',
-              style: Styles.fontText13(context).copyWith(color: Colors.grey),
-            ),
-            isAccepted: isTermsAccepted,
-            onChanged: (value) {
-              setState(() {
-                isTermsAccepted = value;
-              });
-            },
-          ),
+          // CustomTextFormField(hintText: 'اسم حامل البطاقه', isPassword: false),
+          // SizedBox(
+          //   height: screenHeight * .016,
+          // ),
+          // CustomTextFormField(hintText: 'رقم البطاقة', isPassword: false),
+          // SizedBox(
+          //   height: screenHeight * .016,
+          // ),
+          // Row(
+          //   children: [
+          //     Expanded(
+          //       child: CustomTextFormField(
+          //         keyboardType: TextInputType.number,
+          //         hintText: 'تاريخ الصلاحيه',
+          //         isPassword: false,
+          //       ),
+          //     ),
+          //     SizedBox(
+          //       width: 10,
+          //     ),
+          //     Expanded(
+          //       child: CustomTextFormField(
+          //         keyboardType: TextInputType.number,
+          //         hintText: 'CVV',
+          //         isPassword: false,
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          // SizedBox(
+          //   height: screenHeight * .016,
+          // ),
+          // TermsAndCondition(
+          //   textWidget: Text(
+          //     'جعل البطاقة افتراضية',
+          //     style: Styles.fontText13(context).copyWith(color: Colors.grey),
+          //   ),
+          //   isAccepted: isTermsAccepted,
+          //   onChanged: (value) {
+          //     setState(() {
+          //       isTermsAccepted = value;
+          //     });
+          //   },
+          // ),
         ],
       ),
     );

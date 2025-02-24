@@ -36,7 +36,6 @@ class _StepDifferentPaymentState extends State<StepDifferentPayment> {
 List<String> getDifferentPayment() {
   return [
     Assets.imagesPaypal,
-    Assets.imagesVisa,
-    Assets.imagesMastercard,
+    Assets.imagesPaymob,
   ];
 }
