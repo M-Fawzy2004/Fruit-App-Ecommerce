@@ -1,7 +1,7 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/feature/home/entities/cart_item_entity.dart';
 
-class CartEntity   {
+class CartEntity {
   final List<CartItemEntity> cartItems;
 
   CartEntity(this.cartItems);
@@ -20,6 +20,10 @@ class CartEntity   {
       totalPrice += cartItem.calculateTotalPrice();
     }
     return totalPrice;
+  }
+
+  String getProductNames() {
+    return cartItems.map((item) => item.productEntity.name).join(", ");
   }
 
   bool isExist(ProductEntity productEntity) {
@@ -42,5 +46,4 @@ class CartEntity   {
       count: 1,
     );
   }
-
 }

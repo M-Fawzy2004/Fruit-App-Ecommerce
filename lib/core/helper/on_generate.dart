@@ -58,10 +58,12 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
     // chechout view
     case CheckoutView.routeName:
-      final productEntity = settings.arguments as CartEntity?;
-      if (productEntity != null) {
+      final cartEntity = settings.arguments as CartEntity?;
+      if (cartEntity != null) {
         return MaterialPageRoute(
-          builder: (context) => CheckoutView(cartEntity: productEntity),
+          builder: (context) => CheckoutView(
+            cartEntity: cartEntity,
+          ),
         );
       }
       return MaterialPageRoute(builder: (context) => Scaffold());

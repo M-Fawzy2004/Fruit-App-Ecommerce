@@ -1,13 +1,21 @@
+// ignore_for_file: avoid_print
+import 'package:e_commerce_app/core/helper/function/custom_snak_bar.dart';
 import 'package:e_commerce_app/core/widget/custom_button.dart';
 import 'package:e_commerce_app/core/widget/product_view_header.dart';
+import 'package:e_commerce_app/feature/checkout/presentation/manager/paymob_manageer.dart';
+import 'package:e_commerce_app/feature/checkout/presentation/manager/paypal_manager.dart';
 import 'package:e_commerce_app/feature/checkout/presentation/view/widget/checkout_step_page_view.dart';
 import 'package:e_commerce_app/feature/checkout/presentation/view/widget/checkout_steps.dart';
+import 'package:e_commerce_app/feature/home/entities/cart_entity.dart';
 import 'package:e_commerce_app/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CheckoutViewBody extends StatefulWidget {
-  const CheckoutViewBody({super.key});
+  const CheckoutViewBody({super.key, required this.cartEntity});
+
+  final CartEntity cartEntity;
 
   @override
   State<CheckoutViewBody> createState() => _CheckoutViewBodyState();
@@ -36,6 +44,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   }
 
   int currentPageIndex = 0;
+  int? selectedPaymentIndex;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -63,6 +72,11 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
             pageController: pageController,
             formKey: _formKey,
             valueListenable: valueNotifier,
+            onPaymentMethodSelected: (int value) {
+              setState(() {
+                selectedPaymentIndex = value;
+              });
+            },
           ),
         ),
         CustomButton(
@@ -74,6 +88,8 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
               _handleAddressSection();
             } else if (currentPageIndex == 2) {
               _handleShippingSection();
+            } else if (currentPageIndex == 3) {
+              _handlePayment();
             }
           },
         ),
@@ -117,5 +133,44 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
     } else {
       valueNotifier.value = AutovalidateMode.always;
     }
+  }
+
+  void _handlePayment() {
+    if (selectedPaymentIndex == 0) {
+      _handlePayPalSection(
+        cartEntity: widget.cartEntity,
+      );
+    } else if (selectedPaymentIndex == 1) {
+      _handlePaymobSection(carteEntity: widget.cartEntity);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        buildSnakBarError(
+          'يرجى اختيار طريقه الدفع',
+          backgroundColor: Colors.green,
+        ),
+      );
+    }
+  }
+
+  void _handlePaymobSection({required CartEntity carteEntity}) {
+    PaymobManager()
+        .getPaymentKey(carteEntity.calculateTotalPrice(), "EGP")
+        .then((String paymentKey) {
+      launchUrl(
+        Uri.parse(
+          "https://accept.paymob.com/api/acceptance/iframes/902493?payment_token=$paymentKey",
+        ),
+      );
+    });
+  }
+
+  void _handlePayPalSection({
+    required CartEntity cartEntity,
+  }) {
+    PaypalManager().handlePaymentWithPayPal(
+      amount: cartEntity.calculateTotalPrice().toString(),
+      name: cartEntity.getProductNames(),
+      itemCount: cartEntity.cartItems.length.toString(),
+    );
   }
 }

@@ -44,7 +44,8 @@ class ReviewSection extends StatelessWidget {
             height: screenHeight * 0.02,
           ),
           DeliveryAddressCard(
-            address: context.read<OrderEntity>().shippingAddressEntity.toString(),
+            address:
+                context.read<OrderEntity>().shippingAddressEntity.toString(),
             onEdit: () {},
           ),
         ],

@@ -6,7 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class CheckoutView extends StatelessWidget {
-  const CheckoutView({super.key, required this.cartEntity});
+  const CheckoutView({
+    super.key,
+    required this.cartEntity,
+  });
 
   static const routeName = 'checkout';
   final CartEntity cartEntity;
@@ -22,7 +25,10 @@ class CheckoutView extends StatelessWidget {
               cartEntity,
               shippingAddressEntity: ShippingAddressEntity(),
             ),
-            child: CheckoutViewBody(),
+            child: CheckoutViewBody(
+              cartEntity: cartEntity,
+             
+            ),
           ),
         ),
       ),
