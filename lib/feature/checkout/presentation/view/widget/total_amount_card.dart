@@ -12,7 +12,6 @@ class TotalAmountCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.sizeOf(context).height;
     return Container(
-      height: screenHeight * 0.18,
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -35,7 +34,7 @@ class TotalAmountCard extends StatelessWidget {
               price: '30 جنيه',
             ),
             SizedBox(
-              height: screenHeight * 0.02,
+              height: screenHeight * 0.01,
             ),
             Divider(
               indent: 30,

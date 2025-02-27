@@ -18,7 +18,7 @@ class CartItemActionButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: MediaQuery.sizeOf(context).height * 0.06,
+        height: MediaQuery.sizeOf(context).height * 0.04,
         width: MediaQuery.sizeOf(context).width * 0.08,
         decoration: BoxDecoration(
           shape: BoxShape.circle,

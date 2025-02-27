@@ -141,7 +141,9 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
         cartEntity: widget.cartEntity,
       );
     } else if (selectedPaymentIndex == 1) {
-      _handlePaymobSection(carteEntity: widget.cartEntity);
+      _handlePaymobSection(
+        carteEntity: widget.cartEntity,
+      );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         buildSnakBarError(
@@ -169,8 +171,9 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   }) {
     PaypalManager().handlePaymentWithPayPal(
       amount: cartEntity.calculateTotalPrice().toString(),
-      name: cartEntity.getProductNames(),
+      nameCode: cartEntity.getProductNames(),
       itemCount: cartEntity.cartItems.length.toString(),
+      context: context,
     );
   }
 }

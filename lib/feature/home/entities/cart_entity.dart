@@ -23,7 +23,7 @@ class CartEntity {
   }
 
   String getProductNames() {
-    return cartItems.map((item) => item.productEntity.name).join(", ");
+    return cartItems.map((item) => item.productEntity.code).join(", ");
   }
 
   bool isExist(ProductEntity productEntity) {

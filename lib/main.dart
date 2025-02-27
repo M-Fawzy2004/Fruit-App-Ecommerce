@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:e_commerce_app/constant.dart';
 import 'package:e_commerce_app/core/helper/function/custom_bloc_observer.dart';
 import 'package:e_commerce_app/core/helper/on_generate.dart';
@@ -29,15 +30,18 @@ void main() async {
   await Prefs.init();
   setupGetit();
   runApp(
-    EasyLocalization(
-      supportedLocales: [Locale('en'), Locale('ar')],
-      path: 'assets/translations',
-      fallbackLocale: Locale('ar', 'en'),
-      assetLoader: CodegenLoader(),
-      startLocale: Locale('ar'),
-      child: ChangeNotifierProvider(
-        create: (_) => ThemeAppProvider(),
-        child: FruitHub(),
+    DevicePreview(
+      enabled: false,
+      builder: (context) => EasyLocalization(
+        supportedLocales: [Locale('en'), Locale('ar')],
+        path: 'assets/translations',
+        fallbackLocale: Locale('ar', 'EN'),
+        assetLoader: CodegenLoader(),
+        startLocale: Locale('ar'),
+        child: ChangeNotifierProvider(
+          create: (_) => ThemeAppProvider(),
+          child: FruitHub(),
+        ),
       ),
     ),
   );

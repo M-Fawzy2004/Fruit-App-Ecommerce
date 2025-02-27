@@ -14,7 +14,7 @@ String kSupabaseKey =
 
 // pay pal api
 String kPaypalClientId =
-    "AZrF237LxrmUeK7bKknsNYG1goPSzJuaT3PwdSkadt9TYrSW7svyDIy2vKo3S6Owu5cJBEvT-CAJwa0v";
+    "ASQMbfvkeD_hKrVEKhyI_iKNLNj4eAYHfx0uuPADY7RRdmh6UbrUCplZ7c2D0BDZwGnRiKAwMaapflXc";
 
 String kPaypalSecretKey =
-    "EI2WPkX7ms5hJ6yT2_KTEqIqBlndYoG-buqRMV1xD6bYcQux0fX95vNU8v8D0a1uXXdMuOheUTfyItjK";
+    "EBRgA7_YaIPGSzbDRwXm7DZ10gW8O2GeNWGEw4ZBEKbGuX9aprFTiLGnhuDP_Nl1j1rFa3cI7DeH3XEu";

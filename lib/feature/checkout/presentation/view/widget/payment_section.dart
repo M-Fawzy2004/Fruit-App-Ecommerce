@@ -28,7 +28,7 @@ class PaymentSection extends StatelessWidget {
           ),
           SizedBox(height: screenHeight * .016),
           StepDifferentPayment(
-            onPaymentMethodSelected: onPaymentMethodSelected, // تمرير الدالة
+            onPaymentMethodSelected: onPaymentMethodSelected,
           ),
           SizedBox(height: screenHeight * .045),
         ],

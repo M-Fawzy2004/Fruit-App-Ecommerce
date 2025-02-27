@@ -29,8 +29,8 @@ class CustomCartActionButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           child: FittedBox(
             child: Container(
-              height: MediaQuery.sizeOf(context).height * 0.035,
-              width: MediaQuery.sizeOf(context).width * 0.1,
+              height: MediaQuery.sizeOf(context).height * 0.04,
+              width: MediaQuery.sizeOf(context).width * 0.08,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Theme.of(context).colorScheme.tertiary,

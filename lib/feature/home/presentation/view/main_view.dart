@@ -50,7 +50,6 @@ class _MainViewState extends State<MainView> {
     return CurvedNavigationBar(
       onTap: onItemTapped,
       index: index,
-      height: MediaQuery.sizeOf(context).height * 0.07,
       color: Theme.of(context).colorScheme.surface,
       backgroundColor: Theme.of(context).colorScheme.secondary,
       buttonBackgroundColor: Color(0xff1B5E37),

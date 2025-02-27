@@ -28,9 +28,7 @@ class CartItem extends StatelessWidget {
       builder: (context, state) {
         return Container(
           decoration: BoxDecoration(
-            border: Border.all(
-              color: Theme.of(context).colorScheme.inversePrimary,
-            ),
+            border: Border.all(color: Colors.white),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Row(
@@ -38,8 +36,8 @@ class CartItem extends StatelessWidget {
             children: [
               IntrinsicHeight(
                 child: Container(
-                  height: MediaQuery.sizeOf(context).height * 0.16,
-                  width: MediaQuery.sizeOf(context).width * 0.2,
+                  height: MediaQuery.sizeOf(context).height * 0.19,
+                  width: MediaQuery.sizeOf(context).width * 0.23,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(11),
                     color: Theme.of(context).colorScheme.tertiary,
@@ -83,9 +81,7 @@ class CartItem extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(
-                        height: MediaQuery.sizeOf(context).height * 0.01,
-                      ),
+                      Spacer(),
                       CustomCartActionButton(cartEntity: cartEntity),
                     ],
                   ),

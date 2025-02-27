@@ -16,9 +16,8 @@ class FeaturedButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
           ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+         ),
+        child: FittedBox(
           child: Text(
             title,
             style: TextStyle(

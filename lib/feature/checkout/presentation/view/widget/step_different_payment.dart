@@ -3,8 +3,10 @@ import 'package:e_commerce_app/feature/checkout/presentation/view/widget/custom_
 import 'package:flutter/material.dart';
 
 class StepDifferentPayment extends StatefulWidget {
-  const StepDifferentPayment(
-      {super.key, required this.onPaymentMethodSelected});
+  const StepDifferentPayment({
+    super.key,
+    required this.onPaymentMethodSelected,
+  });
   final Function(int) onPaymentMethodSelected;
 
   @override
@@ -16,7 +18,7 @@ class _StepDifferentPaymentState extends State<StepDifferentPayment> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: List.generate(
         getDifferentPayment().length,
         (index) {
@@ -27,7 +29,7 @@ class _StepDifferentPaymentState extends State<StepDifferentPayment> {
               setState(() {
                 selectedIndex = index;
               });
-              widget.onPaymentMethodSelected(index); 
+              widget.onPaymentMethodSelected(index);
             },
           );
         },
