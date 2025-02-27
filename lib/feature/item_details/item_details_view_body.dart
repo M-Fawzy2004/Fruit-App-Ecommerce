@@ -1,8 +1,8 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/widget/custom_button.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/widget/details_feature_card_sliver_grid.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/widget/product_details_info_section.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/widget/product_image_detials_header.dart';
+import 'package:e_commerce_app/feature/item_details/presentation/view/widget/details_feature_card_sliver_grid.dart';
+import 'package:e_commerce_app/feature/item_details/presentation/view/widget/product_details_info_section.dart';
+import 'package:e_commerce_app/feature/item_details/presentation/view/widget/product_image_detials_header.dart';
 import 'package:flutter/material.dart';
 
 class ItemDetailsViewBody extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/widget/item_details_view_body.dart';
+import 'package:e_commerce_app/feature/item_details/presentation/view/widget/item_details_view_body.dart';
 import 'package:flutter/material.dart';
 
 class ItemDetailsView extends StatelessWidget {

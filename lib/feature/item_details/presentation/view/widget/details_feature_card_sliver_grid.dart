@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/utils/assets.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/widget/details_feature_card.dart';
+import 'package:e_commerce_app/feature/item_details/presentation/view/widget/details_feature_card.dart';
 import 'package:flutter/material.dart';
 
 class DetailsFeatureCardSliverGrid extends StatelessWidget {

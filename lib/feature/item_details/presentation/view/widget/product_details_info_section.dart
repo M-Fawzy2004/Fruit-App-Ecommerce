@@ -47,12 +47,12 @@ class ProductDetailsInfoSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.star,
-                  color: Color(0xffFFC529),
-                ),
+              Icon(
+                Icons.star,
+                color: Color(0xffFFC529),
+              ),
+              SizedBox(
+                width: MediaQuery.sizeOf(context).width * 0.02,
               ),
               Text(
                 productEntity.ratingCount.toString(),
