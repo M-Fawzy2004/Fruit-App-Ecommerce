@@ -1,6 +1,5 @@
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_sliver_app_bar.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/home_view.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CustomNestedScrollView extends StatelessWidget {
@@ -8,13 +7,10 @@ class CustomNestedScrollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isArabic = EasyLocalization.of(context)?.locale.languageCode == 'ar';
     return NestedScrollView(
       headerSliverBuilder: (context, innerBoxIsScrolled) {
         return [
-          CustomSliverAppBar(
-            isArabic: isArabic,
-          ),
+          CustomSliverAppBar(),
         ];
       },
       body: Padding(

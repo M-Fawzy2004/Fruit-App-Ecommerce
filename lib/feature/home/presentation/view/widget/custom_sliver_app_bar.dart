@@ -1,19 +1,19 @@
 import 'package:e_commerce_app/constant.dart';
 import 'package:e_commerce_app/core/utils/assets.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/text_app_bar_header.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomSliverAppBar extends StatelessWidget {
   const CustomSliverAppBar({
     super.key,
-    required this.isArabic,
   });
-
-  final bool isArabic;
 
   @override
   Widget build(BuildContext context) {
+    bool isArabic = EasyLocalization.of(context)?.locale.languageCode == 'ar';
+
     return SliverAppBar(
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

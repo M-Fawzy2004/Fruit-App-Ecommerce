@@ -1,7 +1,7 @@
 import 'package:e_commerce_app/feature/home/presentation/view/cart_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/product_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_nested_scroll_view.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:e_commerce_app/feature/profile/presentation/view/profile_view.dart';
 import 'package:flutter/material.dart';
 
 class MainViewBody extends StatelessWidget {
@@ -23,23 +23,7 @@ class MainViewBody extends StatelessWidget {
             const CustomNestedScrollView(),
             const ProductView(),
             const CartView(),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text('الاعدادات'),
-                  SizedBox(
-                    height: 120,
-                  ),
-                  IconButton(
-                    onPressed: () async {
-                      await FirebaseAuth.instance.signOut();
-                    },
-                    icon: const Icon(Icons.logout),
-                  ),
-                ],
-              ),
-            ),
+            const ProfileView(),
           ],
         ),
       ),

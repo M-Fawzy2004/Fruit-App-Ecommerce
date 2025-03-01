@@ -7,7 +7,6 @@ import 'package:e_commerce_app/core/services/shared_preference_singleton.dart';
 import 'package:e_commerce_app/feature/splash/presentation/view/splash_view.dart';
 import 'package:e_commerce_app/firebase_options.dart';
 import 'package:e_commerce_app/generated/codegen_loader.g.dart';
-import 'package:e_commerce_app/theme/dark_mode.dart';
 import 'package:e_commerce_app/theme/theme_app_provider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -35,7 +34,7 @@ void main() async {
       builder: (context) => EasyLocalization(
         supportedLocales: [Locale('en'), Locale('ar')],
         path: 'assets/translations',
-        fallbackLocale: Locale('ar', 'EN'),
+        fallbackLocale: Locale('ar', 'en'),
         assetLoader: CodegenLoader(),
         startLocale: Locale('ar'),
         child: ChangeNotifierProvider(
@@ -52,6 +51,8 @@ class FruitHub extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var themeProvider = Provider.of<ThemeAppProvider>(context);
+
     return MaterialApp(
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
@@ -60,7 +61,7 @@ class FruitHub extends StatelessWidget {
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
       // theme: context.watch<ThemeAppProvider>().themeData,
-      theme: darkMode.copyWith(
+      theme: themeProvider.themeData.copyWith(
         textTheme: ThemeData.dark().textTheme.apply(
               fontFamily: 'Cairo',
             ),

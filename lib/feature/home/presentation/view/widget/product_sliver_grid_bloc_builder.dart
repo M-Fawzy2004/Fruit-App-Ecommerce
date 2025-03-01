@@ -16,7 +16,7 @@ class ProductSliverListBlocBuilder extends StatelessWidget {
     return BlocBuilder<ProductCubit, ProductState>(
       builder: (context, state) {
         if (state is ProductSuccess) {
-          return ProductSliverList(products: state.products);
+          return ProductSliverGrid(products: state.products);
         } else if (state is ProductFailure) {
           return SliverToBoxAdapter(
             child: CustomError(text: state.message),
@@ -24,7 +24,7 @@ class ProductSliverListBlocBuilder extends StatelessWidget {
         } else {
           return Skeletonizer.sliver(
             enabled: true,
-            child: ProductSliverList(
+            child: ProductSliverGrid(
               products: getDummyProducts(),
             ),
           );

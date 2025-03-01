@@ -7,6 +7,10 @@ import 'package:e_commerce_app/feature/home/presentation/view/cart_view.dart';
 import 'package:e_commerce_app/feature/item_details/presentation/view/item_details_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/main_view.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/product_view.dart';
+import 'package:e_commerce_app/feature/profile/presentation/view/favourite_view.dart';
+import 'package:e_commerce_app/feature/profile/presentation/view/order_view.dart';
+import 'package:e_commerce_app/feature/profile/presentation/view/profile_setting_view.dart';
+import 'package:e_commerce_app/feature/profile/presentation/view/profile_view.dart';
 import 'package:e_commerce_app/feature/splash/presentation/view/splash_view.dart';
 import 'package:flutter/material.dart';
 import '../../feature/auth/presentation/view/signin_view.dart';
@@ -67,6 +71,22 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         );
       }
       return MaterialPageRoute(builder: (context) => Scaffold());
+
+    // profile view
+    case ProfileView.routeName:
+      return MaterialPageRoute(builder: (context) => ProfileView());
+
+    // profile setting view
+    case ProfileSettingView.routeName:
+      return MaterialPageRoute(builder: (context) => ProfileSettingView());
+
+    // order view
+    case OrderView.routeName:
+      return MaterialPageRoute(builder: (context) => OrderView());
+
+    // favourite view
+    case FavouriteView.routeName:
+      return MaterialPageRoute(builder: (context) => FavouriteView());
 
     // default
     default:
