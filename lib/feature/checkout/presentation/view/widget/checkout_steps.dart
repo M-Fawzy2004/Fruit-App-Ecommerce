@@ -37,9 +37,9 @@ class CheckoutSteps extends StatelessWidget {
 
 List<String> getStep() {
   return [
-    LocaleKeys.Shopping_shopping.tr(),
-    LocaleKeys.Shopping_address.tr(),
-    LocaleKeys.Shopping_review.tr(),
-    LocaleKeys.Shopping_payment.tr(),
+    LocaleKeys.CheckOut_shipping.tr(),
+    LocaleKeys.CheckOut_address.tr(),
+    LocaleKeys.CheckOut_review.tr(),
+    LocaleKeys.CheckOut_payment.tr(),
   ];
 }

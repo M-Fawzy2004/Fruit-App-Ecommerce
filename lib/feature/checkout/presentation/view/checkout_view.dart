@@ -27,7 +27,6 @@ class CheckoutView extends StatelessWidget {
             ),
             child: CheckoutViewBody(
               cartEntity: cartEntity,
-             
             ),
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/helper/function/get_user.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/core/utils/assets.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -45,7 +46,7 @@ class ProfileHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'محمد فوزى',
+                  getUser().name,
                   style: Styles.fontText13(context).copyWith(
                     fontWeight: FontWeight.w800,
                   ),
@@ -54,7 +55,7 @@ class ProfileHeader extends StatelessWidget {
                   height: MediaQuery.sizeOf(context).height * .005,
                 ),
                 Text(
-                  'mail@mail.com',
+                  getUser().email,
                   style: Styles.fontText13(context).copyWith(
                     fontWeight: FontWeight.w400,
                   ),

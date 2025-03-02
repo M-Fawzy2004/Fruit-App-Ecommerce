@@ -111,7 +111,12 @@
     "strawberry" : "فرولة",
     "banana" : "موز",
     "watermelon" : "بطيخ",
-    "pineapple" : "أناناس"
+    "pineapple" : "أناناس",
+    "sort" : "ترتيب حسب :",
+    "priceLow" : "السعر ( الأقل الي الأعلي )",
+    "priceHigh" : "السعر ( الأعلي الي الأقل )",
+    "alphabet" : "الأبجديه",
+    "filtering" : "تصفية"
   },
 
   "Success" : {
@@ -121,15 +126,57 @@
     "pound" : "جنيه"
   },
 
-  "Shopping" : {
-    "shopping" :"الشحن",
+  "DetailsItem" : {
+    "review" : "المراجعه",
+    "addToCart" : "اضافه الى السلة",
+    "addToFavorite" : "اضافه الى المفضله",
+    "validity" : "الصلاحيه",
+    "oganic" : "اوجانيك",
+    "gram" : "100 جرام",
+    "kilo" : "كيلو"
+  },
+
+  "CheckOut" : {
+    "shipping" : "الشحن",
     "address" : "العنوان",
     "payment" : "الدفع",
-    "review" : "المرجعه",
+    "review" : "المراجعه",
     "cash" : "الدفع عند الاستلام",
-    "delivery" : "التسليم من المكان",
-    "online" : "ألدفع أونلاين",
-    "paymentMethod" : "يرجي تحديد طريقه الدفع"
+    "online" : "الدفع أونلاين",
+    "deliveryPlace": "التسليم من المكان",
+    "selectPayment" : "يرجي تحديد طريقه الدفع",
+    "next" : "التالي",
+    "paymentCard" :"الدفع بواسطة البطاقة",
+    "fullNameText" : "الاسم كامل",
+    "emailText" : "البريد الالكتروني",
+    "addressText" : "العنوان",
+    "cityText" : "المدينة",
+    "countryText" : "رقم الطابق/رقم الشقه",
+    "phoneText" : "رقم الهاتف",
+    "saveAddress" : "حفظ العنوان",
+    "allTotal" : "المجموع الكلي",
+    "delivery" : "التوصيل  :",
+    "subtotal" : "المجموع الفرعي :",
+    "addressDelivery" : "عنوان التوصيل",
+    "edit" : "تعديل",
+    "choosePayment1" : "أختار طريقه الدفع المناسبه :",
+    "choosePayment" : "من فضلك اختر طريقه الدفع المناسبه لك.",
+    "appSummary" : "ملخص الطلب :",
+    "confirmOrder" : "يرجي تأكيد  طلبك"
+  },
+
+  "Profile" : {
+    "myAccount" : "حسابي",
+    "profile" : "الملف الشخصي",
+    "order" : "الطلبات",
+    "favorite" : "المفضله",
+    "notification" : "الاشعارات",
+    "language" : "اللغه",
+    "darkMode" : "الوضع الليلي",
+    "logout" : "تسجيل الخروج",
+    "currentLanguage" : "اللغه الحالية",
+    "en" : "English",
+    "ar" : "العربية"
   }
 
 }

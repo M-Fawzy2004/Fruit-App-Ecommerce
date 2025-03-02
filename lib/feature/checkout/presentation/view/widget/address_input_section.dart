@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/feature/auth/presentation/view/widget/custom_form_text_field.dart';
 import 'package:e_commerce_app/feature/checkout/domain/entities/order_entity.dart';
 import 'package:e_commerce_app/feature/checkout/presentation/view/widget/save_address_toggle.dart';
+import 'package:e_commerce_app/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -29,10 +31,9 @@ class AddressInputSection extends StatelessWidget {
             children: [
               CustomTextFormField(
                 onSaved: (val) {
-                  context.read<OrderEntity>().shippingAddressEntity.name =
-                      val!;
+                  context.read<OrderEntity>().shippingAddressEntity.name = val!;
                 },
-                hintText: 'الاسم كامل',
+                hintText: LocaleKeys.CheckOut_fullNameText.tr(),
                 isPassword: false,
               ),
               SizedBox(
@@ -43,7 +44,7 @@ class AddressInputSection extends StatelessWidget {
                   context.read<OrderEntity>().shippingAddressEntity.email =
                       val!;
                 },
-                hintText: 'البريد الإلكتروني',
+                hintText: LocaleKeys.CheckOut_emailText.tr(),
                 isPassword: false,
               ),
               SizedBox(
@@ -54,7 +55,7 @@ class AddressInputSection extends StatelessWidget {
                   context.read<OrderEntity>().shippingAddressEntity.address =
                       val!;
                 },
-                hintText: 'العنوان',
+                hintText: LocaleKeys.CheckOut_address.tr(),
                 isPassword: false,
               ),
               SizedBox(
@@ -62,10 +63,9 @@ class AddressInputSection extends StatelessWidget {
               ),
               CustomTextFormField(
                 onSaved: (val) {
-                  context.read<OrderEntity>().shippingAddressEntity.city =
-                      val!;
+                  context.read<OrderEntity>().shippingAddressEntity.city = val!;
                 },
-                hintText: 'المدينه',
+                hintText: LocaleKeys.CheckOut_cityText.tr(),
                 isPassword: false,
               ),
               SizedBox(
@@ -78,7 +78,7 @@ class AddressInputSection extends StatelessWidget {
                       .shippingAddressEntity
                       .addressDetails = val!;
                 },
-                hintText: 'رقم الطابق , رقم الشقه ..',
+                hintText: LocaleKeys.CheckOut_countryText.tr(),
                 isPassword: false,
               ),
               SizedBox(
@@ -89,7 +89,7 @@ class AddressInputSection extends StatelessWidget {
                   context.read<OrderEntity>().shippingAddressEntity.phone =
                       val!;
                 },
-                hintText: 'رقم الهاتف',
+                hintText: LocaleKeys.CheckOut_phoneText.tr(),
                 isPassword: false,
               ),
               SizedBox(

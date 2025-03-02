@@ -11,13 +11,13 @@ class CheckOutStepPageView extends StatelessWidget {
     required this.pageController,
     required this.formKey,
     required this.valueListenable,
-    required this.onPaymentMethodSelected, // إضافة المعامل الجديد
+    required this.onPaymentMethodSelected,
   });
 
   final PageController pageController;
   final GlobalKey<FormState> formKey;
   final ValueListenable<AutovalidateMode> valueListenable;
-  final ValueChanged<int> onPaymentMethodSelected; // استقبال القيمة المختارة
+  final ValueChanged<int> onPaymentMethodSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class CheckOutStepPageView extends StatelessWidget {
       ),
       ReviewSection(),
       PaymentSection(
-        onPaymentMethodSelected: onPaymentMethodSelected, // تمرير الدالة
+        onPaymentMethodSelected: onPaymentMethodSelected,
       ),
     ];
   }

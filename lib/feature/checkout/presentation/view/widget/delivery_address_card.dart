@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/constant.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/core/utils/assets.dart';
+import 'package:e_commerce_app/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class DeliveryAddressCard extends StatelessWidget {
@@ -29,7 +31,7 @@ class DeliveryAddressCard extends StatelessWidget {
           Row(
             children: [
               Text(
-                'عنوان التوصيل',
+                LocaleKeys.CheckOut_addressDelivery.tr(),
                 style: Styles.fontText13(context).copyWith(
                   fontWeight: FontWeight.w700,
                 ),
@@ -42,7 +44,7 @@ class DeliveryAddressCard extends StatelessWidget {
                     Image.asset(Assets.imagesVector),
                     SizedBox(width: screenWidth * 0.02),
                     Text(
-                      'تعديل',
+                      LocaleKeys.CheckOut_edit.tr(),
                       style: Styles.fontText13(context),
                     ),
                   ],

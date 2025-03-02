@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/constant.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/core/utils/assets.dart';
+import 'package:e_commerce_app/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CustomLogoutAccount extends StatelessWidget {
@@ -20,7 +22,7 @@ class CustomLogoutAccount extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'تسجيل الخروج',
+              LocaleKeys.Profile_logout.tr(),
               style: Styles.fontText13(context).copyWith(
                 color: activeDotColor,
               ),

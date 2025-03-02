@@ -1,5 +1,7 @@
 import 'package:e_commerce_app/feature/checkout/domain/entities/order_entity.dart';
 import 'package:e_commerce_app/feature/checkout/presentation/view/widget/order_amount_item.dart';
+import 'package:e_commerce_app/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,16 +24,16 @@ class TotalAmountCard extends StatelessWidget {
         child: Column(
           children: [
             OrderAmountItem(
-              text: 'المجموع الفرعي :',
+              text: LocaleKeys.CheckOut_subtotal.tr(),
               price:
-                  '${context.read<OrderEntity>().cartEntity.calculateTotalPrice().toString()} جنيه',
+                  '${context.read<OrderEntity>().cartEntity.calculateTotalPrice().toString()} ${LocaleKeys.Success_pound.tr()}',
             ),
             SizedBox(
               height: screenHeight * 0.02,
             ),
             OrderAmountItem(
-              text: 'التوصيل :',
-              price: '30 جنيه',
+              text: LocaleKeys.CheckOut_delivery.tr(),
+              price: '30 ${LocaleKeys.Success_pound.tr()}',
             ),
             SizedBox(
               height: screenHeight * 0.01,
@@ -44,7 +46,7 @@ class TotalAmountCard extends StatelessWidget {
               height: screenHeight * 0.01,
             ),
             OrderAmountItem(
-              text: 'المجموع الكلي :',
+              text: LocaleKeys.CheckOut_allTotal.tr(),
               price:
                   '${(context.read<OrderEntity>().cartEntity.calculateTotalPrice() + 30).toString()} جنيه',
             ),

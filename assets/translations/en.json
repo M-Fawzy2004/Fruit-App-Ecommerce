@@ -111,7 +111,12 @@
       "strawberry" : "Strawberry",
       "banana" : "Banana",
       "watermelon" : "Watermelon",
-      "pineapple" : "Pineapple"
+      "pineapple" : "Pineapple",
+      "sort" : "sort by :",
+      "priceLow" : "Price (Low to High)",
+      "priceHigh" :"Price (High to Low)",
+      "alphabet" : "Alphabetically",
+      "filtering" : "تصفية"
     },
 
     "Success" : {
@@ -121,16 +126,58 @@
       "pound" : "Pound"
     },
 
-    "Shopping" : {
-      "shopping" :"الشحن",
-      "address" : "العنوان",
-      "payment" : "الدفع",
-      "review" : "المرجعه",
-      "cash" : "الدفع عند الاستلام",
-      "delivery" : "التسليم من المكان",
-      "online" : "ألدفع أونلاين",
-      "paymentMethod" : "يرجي تحديد طريقه الدفع"
-    }
-    
+    "DetailsItem" : {
+    "review" : "Review",
+    "addToCart" : "Add To Cart",
+    "addToFavorite" :"Add To Favorite",
+    "validity" : "Validity",
+    "oganic" : "Oganic",
+    "gram" : "100 Gram",
+    "kilo" : "Kilo"
+  },
+
+  "CheckOut" : {
+    "shipping" : "Shipping",
+    "address" : "Address",
+    "payment" : "Payment",
+    "review" : "Review",
+    "cash" : "Cash on delivery",
+    "online" : "Pay online",
+    "deliveryPlace": "Delivery from place",
+    "selectPayment" : "Please select a payment method",
+    "next" : "Next",
+    "paymentCard" :"Payment With Card",
+    "fullNameText" : "Full Name",
+    "emailText" : "Email",
+    "addressText" : "Address",
+    "cityText" : "City",
+    "countryText" : "Floor number, apartment number..",
+    "phoneText" : "Phone",
+    "saveAddress" : "Save Address",
+    "allTotal" : "All Total :",
+    "delivery" : "Delivery :",
+    "subtotal" : "Subtotal :",
+    "addressDelivery" : "Delivery Address",
+    "edit" : "Edit",
+    "choosePayment1" :"Choose Payment Method :",
+    "choosePayment" : "Please choose a payment method suitable for you :",
+    "appSummary" : "Order Summary :",
+    "confirmOrder" : "Please confirm your order :"
+  },
+  
+  "Profile" : {
+    "myAccount" : "My Account",
+    "profile" : "Profile",
+    "order" : "Orders",
+    "favorite" : "Favorites",
+    "notification" : "Notifications",
+    "language" : "Language",
+    "darkMode" : "Dark Mode",
+    "logout" : "Logout",
+    "currentLanguage" : "Current Language",
+    "en" : "English",
+    "ar" : "Arabic"
   }
+    
+}
   

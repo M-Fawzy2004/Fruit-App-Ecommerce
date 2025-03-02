@@ -114,7 +114,12 @@ class CodegenLoader extends AssetLoader{
     "strawberry": "فرولة",
     "banana": "موز",
     "watermelon": "بطيخ",
-    "pineapple": "أناناس"
+    "pineapple": "أناناس",
+    "sort": "ترتيب حسب :",
+    "priceLow": "السعر ( الأقل الي الأعلي )",
+    "priceHigh": "السعر ( الأعلي الي الأقل )",
+    "alphabet": "الأبجديه",
+    "filtering": "تصفية"
   },
   "Success": {
     "titleAdd": "تم أضافه المنتج بنجاح",
@@ -122,15 +127,55 @@ class CodegenLoader extends AssetLoader{
     "payment": "الدفع",
     "pound": "جنيه"
   },
-  "Shopping": {
-    "shopping": "الشحن",
+  "DetailsItem": {
+    "review": "المراجعه",
+    "addToCart": "اضافه الى السلة",
+    "addToFavorite": "اضافه الى المفضله",
+    "validity": "الصلاحيه",
+    "oganic": "اوجانيك",
+    "gram": "100 جرام",
+    "kilo": "كيلو"
+  },
+  "CheckOut": {
+    "shipping": "الشحن",
     "address": "العنوان",
     "payment": "الدفع",
-    "review": "المرجعه",
+    "review": "المراجعه",
     "cash": "الدفع عند الاستلام",
-    "delivery": "التسليم من المكان",
-    "online": "ألدفع أونلاين",
-    "paymentMethod": "يرجي تحديد طريقه الدفع"
+    "online": "الدفع أونلاين",
+    "deliveryPlace": "التسليم من المكان",
+    "selectPayment": "يرجي تحديد طريقه الدفع",
+    "next": "التالي",
+    "paymentCard": "الدفع بواسطة البطاقة",
+    "fullNameText": "الاسم كامل",
+    "emailText": "البريد الالكتروني",
+    "addressText": "العنوان",
+    "cityText": "المدينة",
+    "countryText": "رقم الطابق/رقم الشقه",
+    "phoneText": "رقم الهاتف",
+    "saveAddress": "حفظ العنوان",
+    "allTotal": "المجموع الكلي",
+    "delivery": "التوصيل  :",
+    "subtotal": "المجموع الفرعي :",
+    "addressDelivery": "عنوان التوصيل",
+    "edit": "تعديل",
+    "choosePayment1": "أختار طريقه الدفع المناسبه :",
+    "choosePayment": "من فضلك اختر طريقه الدفع المناسبه لك.",
+    "appSummary": "ملخص الطلب :",
+    "confirmOrder": "يرجي تأكيد  طلبك"
+  },
+  "Profile": {
+    "myAccount": "حسابي",
+    "profile": "الملف الشخصي",
+    "order": "الطلبات",
+    "favorite": "المفضله",
+    "notification": "الاشعارات",
+    "language": "اللغه",
+    "darkMode": "الوضع الليلي",
+    "logout": "تسجيل الخروج",
+    "currentLanguage": "اللغه الحالية",
+    "en": "English",
+    "ar": "العربية"
   }
 };
 static const Map<String,dynamic> _en = {
@@ -233,7 +278,12 @@ static const Map<String,dynamic> _en = {
     "strawberry": "Strawberry",
     "banana": "Banana",
     "watermelon": "Watermelon",
-    "pineapple": "Pineapple"
+    "pineapple": "Pineapple",
+    "sort": "sort by :",
+    "priceLow": "Price (Low to High)",
+    "priceHigh": "Price (High to Low)",
+    "alphabet": "Alphabetically",
+    "filtering": "تصفية"
   },
   "Success": {
     "titleAdd": "The product has been added successfully",
@@ -241,15 +291,55 @@ static const Map<String,dynamic> _en = {
     "payment": "Payment",
     "pound": "Pound"
   },
-  "Shopping": {
-    "shopping": "الشحن",
-    "address": "العنوان",
-    "payment": "الدفع",
-    "review": "المرجعه",
-    "cash": "الدفع عند الاستلام",
-    "delivery": "التسليم من المكان",
-    "online": "ألدفع أونلاين",
-    "paymentMethod": "يرجي تحديد طريقه الدفع"
+  "DetailsItem": {
+    "review": "Review",
+    "addToCart": "Add To Cart",
+    "addToFavorite": "Add To Favorite",
+    "validity": "Validity",
+    "oganic": "Oganic",
+    "gram": "100 Gram",
+    "kilo": "Kilo"
+  },
+  "CheckOut": {
+    "shipping": "Shipping",
+    "address": "Address",
+    "payment": "Payment",
+    "review": "Review",
+    "cash": "Cash on delivery",
+    "online": "Pay online",
+    "deliveryPlace": "Delivery from place",
+    "selectPayment": "Please select a payment method",
+    "next": "Next",
+    "paymentCard": "Payment With Card",
+    "fullNameText": "Full Name",
+    "emailText": "Email",
+    "addressText": "Address",
+    "cityText": "City",
+    "countryText": "Floor number, apartment number..",
+    "phoneText": "Phone",
+    "saveAddress": "Save Address",
+    "allTotal": "All Total :",
+    "delivery": "Delivery :",
+    "subtotal": "Subtotal :",
+    "addressDelivery": "Delivery Address",
+    "edit": "Edit",
+    "choosePayment1": "Choose Payment Method :",
+    "choosePayment": "Please choose a payment method suitable for you :",
+    "appSummary": "Order Summary :",
+    "confirmOrder": "Please confirm your order :"
+  },
+  "Profile": {
+    "myAccount": "My Account",
+    "profile": "Profile",
+    "order": "Orders",
+    "favorite": "Favorites",
+    "notification": "Notifications",
+    "language": "Language",
+    "darkMode": "Dark Mode",
+    "logout": "Logout",
+    "currentLanguage": "Current Language",
+    "en": "English",
+    "ar": "Arabic"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};

@@ -1,6 +1,6 @@
-import 'package:e_commerce_app/constant.dart';
 import 'package:e_commerce_app/core/entities/product_entity.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
+import 'package:e_commerce_app/feature/item_details/presentation/view/widget/custom_rating_item.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsInfoSection extends StatelessWidget {
@@ -10,6 +10,10 @@ class ProductDetailsInfoSection extends StatelessWidget {
   });
 
   final ProductEntity productEntity;
+
+  bool isArabic(String text) {
+    return RegExp(r'[\u0600-\u06FF]').hasMatch(text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +26,27 @@ class ProductDetailsInfoSection extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    productEntity.name,
-                    style: Styles.fontText19(context),
+                  Directionality(
+                    textDirection: isArabic(productEntity.name)
+                        ? TextDirection.rtl
+                        : TextDirection.ltr,
+                    child: Text(
+                      productEntity.name,
+                      style: Styles.fontText19(context),
+                    ),
                   ),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.01,
                   ),
-                  Text(
-                    '${productEntity.price.toString()} / ${productEntity.unitAmount} كيلو',
-                    style: Styles.fontText16(context).copyWith(
-                      color: Color(0xffF4A91F),
+                  Directionality(
+                    textDirection: isArabic(productEntity.unitAmount.toString())
+                        ? TextDirection.rtl
+                        : TextDirection.ltr,
+                    child: Text(
+                      '${productEntity.price.toString()} / ${productEntity.unitAmount} كيلو',
+                      style: Styles.fontText16(context).copyWith(
+                        color: Color(0xffF4A91F),
+                      ),
                     ),
                   ),
                 ],
@@ -44,50 +58,20 @@ class ProductDetailsInfoSection extends StatelessWidget {
           SizedBox(
             height: MediaQuery.sizeOf(context).height * 0.01,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Icon(
-                Icons.star,
-                color: Color(0xffFFC529),
-              ),
-              SizedBox(
-                width: MediaQuery.sizeOf(context).width * 0.02,
-              ),
-              Text(
-                productEntity.ratingCount.toString(),
-                style: Styles.fontText13(context).copyWith(
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.sizeOf(context).width * 0.02,
-              ),
-              Text(
-                '(${productEntity.avgRating})',
-                style: Styles.fontText13(context).copyWith(
-                  color: Theme.of(context).colorScheme.inversePrimary,
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.sizeOf(context).width * 0.02,
-              ),
-              Text(
-                'المراجعه',
-                style: Styles.fontText13(context).copyWith(
-                  decoration: TextDecoration.underline,
-                  decorationColor: activeDotColor,
-                  color: activeDotColor,
-                ),
-              )
-            ],
+          CustomRatingItem(
+            productEntity: productEntity,
           ),
           SizedBox(
             height: MediaQuery.sizeOf(context).height * 0.015,
           ),
-          Text(
-            productEntity.desc,
-            style: Styles.fontText13(context),
+          Directionality(
+            textDirection: isArabic(productEntity.desc)
+                ? TextDirection.rtl
+                : TextDirection.ltr,
+            child: Text(
+              productEntity.desc,
+              style: Styles.fontText13(context),
+            ),
           ),
         ],
       ),

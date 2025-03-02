@@ -1,5 +1,4 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
-import 'package:e_commerce_app/core/utils/curved_clipper.dart';
 import 'package:e_commerce_app/feature/home/presentation/view/widget/custom_cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -19,21 +18,10 @@ class ProductImageDetailsHeader extends StatelessWidget {
     double screenWidth = MediaQuery.sizeOf(context).width;
     return Stack(
       children: [
-        ClipPath(
-          clipper: CurvedClipper(),
-          child: Container(
-            height: screenHeight * 0.38,
-            color: Theme.of(context).colorScheme.tertiary,
-          ),
-        ),
-        Positioned(
-          top: screenHeight * 0,
-          right: 0,
-          left: 0,
-          child: CustomCachedNetworkImage(
-            height: screenHeight * 0.35,
-            imageUrl: productEntity.imageUrl!,
-          ),
+        CustomCachedNetworkImage(
+          height: screenHeight * 0.35,
+          width: screenWidth,
+          imageUrl: productEntity.imageUrl!,
         ),
         Positioned(
           top: screenHeight * 0.04,

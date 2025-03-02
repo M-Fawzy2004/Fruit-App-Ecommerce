@@ -51,8 +51,6 @@ class FruitHub extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var themeProvider = Provider.of<ThemeAppProvider>(context);
-
     return MaterialApp(
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
@@ -60,12 +58,11 @@ class FruitHub extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
-      // theme: context.watch<ThemeAppProvider>().themeData,
-      theme: themeProvider.themeData.copyWith(
-        textTheme: ThemeData.dark().textTheme.apply(
-              fontFamily: 'Cairo',
-            ),
-      ),
+      theme: Provider.of<ThemeAppProvider>(context).themeData.copyWith(
+            textTheme: ThemeData.dark().textTheme.apply(
+                  fontFamily: 'Cairo',
+                ),
+          ),
     );
   }
 }

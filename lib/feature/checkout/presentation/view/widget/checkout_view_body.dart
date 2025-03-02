@@ -55,7 +55,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
         ProductViewHeader(
           isVisible: true,
           isVisibleNotification: false,
-          title: LocaleKeys.Shopping_shopping.tr(),
+          title: LocaleKeys.CheckOut_shipping.tr(),
         ),
         SizedBox(
           height: screenHeight * 0.02,
@@ -112,13 +112,13 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   String getButtonNextText(int currentPageIndex) {
     switch (currentPageIndex) {
       case 0:
-        return 'التالي';
+        return LocaleKeys.CheckOut_next.tr();
       case 1:
-        return 'التالي';
+        return LocaleKeys.CheckOut_next.tr();
       case 2:
-        return 'الدفع بواسطه Card';
+        return LocaleKeys.CheckOut_paymentCard.tr();
       default:
-        return 'الدفع';
+        return LocaleKeys.CheckOut_payment.tr();
     }
   }
 
@@ -147,7 +147,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         buildSnakBarError(
-          'يرجى اختيار طريقه الدفع',
+          LocaleKeys.CheckOut_selectPayment.tr(),
           backgroundColor: Colors.green,
         ),
       );
