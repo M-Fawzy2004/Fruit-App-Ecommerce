@@ -28,7 +28,9 @@ class CartItem extends StatelessWidget {
       builder: (context, state) {
         return Container(
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.white),
+            border: Border.all(
+              color: Theme.of(context).colorScheme.primary,
+            ),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Row(

@@ -9,7 +9,10 @@ class ProfileSettingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ProfileSettingViewBody(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        child: SafeArea(child: ProfileSettingViewBody()),
+      ),
     );
   }
 }

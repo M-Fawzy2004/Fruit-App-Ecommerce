@@ -34,7 +34,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
           child: SvgPicture.asset(Assets.imagesFreepikPlant),
         ),
         // image fruit hub
-        SvgPicture.asset(Assets.imagesFruitHub),
+        Image.asset(Assets.imagesFruithubimage),
         // image circles
         SvgPicture.asset(
           Assets.imagesFreepikCircles,

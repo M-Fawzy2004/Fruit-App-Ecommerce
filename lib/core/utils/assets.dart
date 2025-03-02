@@ -94,6 +94,14 @@ class Assets {
   /// assets/images/fruit_hub.svg
   static const String imagesFruitHub = "assets/images/fruit_hub.svg";
 
+  /// Assets for imagesFruitbasket
+  /// assets/images/fruitbasket.png
+  static const String imagesFruitbasket = "assets/images/fruitbasket.png";
+
+  /// Assets for imagesFruithubimage
+  /// assets/images/fruithubimage.png
+  static const String imagesFruithubimage = "assets/images/fruithubimage.png";
+
   /// Assets for imagesGlobal
   /// assets/images/global.png
   static const String imagesGlobal = "assets/images/global.png";
@@ -157,6 +165,10 @@ class Assets {
   /// Assets for imagesPerson
   /// assets/images/person.png
   static const String imagesPerson = "assets/images/person.png";
+
+  /// Assets for imagesPineapple
+  /// assets/images/pineapple.png
+  static const String imagesPineapple = "assets/images/pineapple.png";
 
   /// Assets for imagesPineappleCuate
   /// assets/images/pineapple-cuate.png

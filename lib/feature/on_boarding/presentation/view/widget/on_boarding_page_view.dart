@@ -21,14 +21,14 @@ class OnBoardingPageView extends StatelessWidget {
         return index == 0
             ? PageViewItem(
                 isVisible: true,
-                image: Assets.imagesImagePageViewItem1,
+                image: Assets.imagesFruitbasket,
                 backgroundimage: Assets.imagesBackgroundPageViewItem1,
                 title: SplashViewTitle(),
                 description: LocaleKeys.SplashView1_description.tr(),
               )
             : PageViewItem(
                 isVisible: false,
-                image: Assets.imagesImagePageViewItem2,
+                image: Assets.imagesPineapple,
                 backgroundimage: Assets.imagesBackgroundPageViewItem2,
                 title: Text(
                   LocaleKeys.SplashView2_title.tr(),

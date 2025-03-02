@@ -1,8 +1,10 @@
 import 'package:e_commerce_app/core/helper/function/get_user.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/core/utils/assets.dart';
+import 'package:e_commerce_app/feature/profile/presentation/provider/user_provider/user_provider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({super.key});
@@ -46,7 +48,7 @@ class ProfileHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  getUser().name,
+                  Provider.of<UserProvider>(context).name,
                   style: Styles.fontText13(context).copyWith(
                     fontWeight: FontWeight.w800,
                   ),

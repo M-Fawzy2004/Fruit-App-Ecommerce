@@ -41,10 +41,10 @@ class PageViewItem extends StatelessWidget {
 
               // Moving image
               Positioned(
-                bottom: 0,
+                top: 90,
                 right: 0,
                 left: 0,
-                child: SvgPicture.asset(image),
+                child: Image.asset(image),
               ),
 
               // text skip
