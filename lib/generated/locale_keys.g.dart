@@ -94,6 +94,8 @@ abstract class  LocaleKeys {
   static const CategoryProduct_priceHigh = 'CategoryProduct.priceHigh';
   static const CategoryProduct_alphabet = 'CategoryProduct.alphabet';
   static const CategoryProduct_filtering = 'CategoryProduct.filtering';
+  static const CategoryProduct_have = 'CategoryProduct.have';
+  static const CategoryProduct_category = 'CategoryProduct.category';
   static const CategoryProduct = 'CategoryProduct';
   static const Success_titleAdd = 'Success.titleAdd';
   static const Success_titleRemoved = 'Success.titleRemoved';

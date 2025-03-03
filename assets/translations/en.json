@@ -116,7 +116,9 @@
       "priceLow" : "Price (Low to High)",
       "priceHigh" :"Price (High to Low)",
       "alphabet" : "Alphabetically",
-      "filtering" : "تصفية"
+      "filtering" : "تصفية",
+      "have" : "لديك",
+      "category" : "منتجات فى سلله التسوق"
     },
 
     "Success" : {

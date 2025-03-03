@@ -30,7 +30,7 @@ class CartHeader extends StatelessWidget {
           color: Color(0xffEBF9F1),
           child: Center(
             child: Text(
-              'لديك ${context.watch<CartCubit>().cartEntity.cartItems.length} منتجات في سله التسوق',
+              '${LocaleKeys.CategoryProduct_have.tr()} ${context.watch<CartCubit>().cartEntity.cartItems.length} ${LocaleKeys.CategoryProduct_category.tr()}',
               style: Styles.fontText13(context).copyWith(
                 color: activeDotColor,
               ),

@@ -1,4 +1,6 @@
 import 'package:e_commerce_app/core/entities/product_entity.dart';
+import 'package:e_commerce_app/feature/auth/presentation/view/forget_password_view.dart';
+import 'package:e_commerce_app/feature/auth/presentation/view/pin_code_verf_view.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/signup_view.dart';
 import 'package:e_commerce_app/feature/best_selling/presentation/view/best_selling_view.dart';
 import 'package:e_commerce_app/feature/checkout/presentation/view/checkout_view.dart';
@@ -33,6 +35,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     // SignupView
     case SignUpView.routeName:
       return MaterialPageRoute(builder: (context) => SignUpView());
+
+    // forget password view
+    case ForgetPasswordView.routeName:
+      return MaterialPageRoute(builder: (context) => ForgetPasswordView());
+
+    // verification code view
+    case PinCodeVerificationView.routeName:
+      return MaterialPageRoute(builder: (context) => PinCodeVerificationView()); 
 
     // Homeview
     case MainView.routeName:

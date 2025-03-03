@@ -2,6 +2,7 @@ import 'package:e_commerce_app/constant.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/core/widget/custom_button.dart';
 import 'package:e_commerce_app/feature/auth/presentation/manager/signin_cubit/signin_cubit_cubit.dart';
+import 'package:e_commerce_app/feature/auth/presentation/view/forget_password_view.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/signup_view.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/widget/custom_form_text_field.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/widget/custom_login_different.dart';
@@ -54,7 +55,12 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15.0),
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        ForgetPasswordView.routeName,
+                      );
+                    },
                     child: Text(
                       LocaleKeys.Login_forgotPassword.tr(),
                       style: Styles.fontText13(context)

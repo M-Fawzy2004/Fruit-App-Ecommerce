@@ -20,55 +20,60 @@ class ProductViewHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isArabic = EasyLocalization.of(context)?.locale.languageCode == 'ar';
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        if (isVisible)
-          Align(
-            alignment: isArabic ? Alignment.centerRight : Alignment.centerLeft,
-            child: Container(
-              height: MediaQuery.sizeOf(context).height * 0.05,
-              width: MediaQuery.sizeOf(context).width * 0.1,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Theme.of(context).colorScheme.tertiary,
-              ),
-              child: FittedBox(
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios_new_outlined,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          if (isVisible)
+            Align(
+              alignment:
+                  isArabic ? Alignment.centerRight : Alignment.centerLeft,
+              child: Container(
+                height: MediaQuery.sizeOf(context).height * 0.05,
+                width: MediaQuery.sizeOf(context).width * 0.1,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Theme.of(context).colorScheme.tertiary,
+                ),
+                child: FittedBox(
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios_new_outlined,
+                    ),
                   ),
                 ),
               ),
             ),
+          Text(
+            title,
+            style: Styles.fontText19(context),
           ),
-        Text(
-          title,
-          style: Styles.fontText19(context),
-        ),
-        if (isVisibleNotification)
-          Align(
-            alignment: isArabic ? Alignment.centerLeft : Alignment.centerRight,
-            child: Container(
-              height: 35,
-              width: 35,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: kColorGery2,
-              ),
-              child: IconButton(
-                onPressed: () {},
-                icon: SvgPicture.asset(
-                  Assets.imagesNotification,
-                  color: Colors.black, // ignore: deprecated_member_use
+          if (isVisibleNotification)
+            Align(
+              alignment:
+                  isArabic ? Alignment.centerLeft : Alignment.centerRight,
+              child: Container(
+                height: 35,
+                width: 35,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: kColorGery2,
+                ),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.asset(
+                    Assets.imagesNotification,
+                    color: Colors.black, // ignore: deprecated_member_use
+                  ),
                 ),
               ),
             ),
-          ),
-      ],
+        ],
+      ),
     );
   }
 }

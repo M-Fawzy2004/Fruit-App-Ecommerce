@@ -119,7 +119,9 @@ class CodegenLoader extends AssetLoader{
     "priceLow": "السعر ( الأقل الي الأعلي )",
     "priceHigh": "السعر ( الأعلي الي الأقل )",
     "alphabet": "الأبجديه",
-    "filtering": "تصفية"
+    "filtering": "تصفية",
+    "have": "لديك",
+    "category": "منتجات فى سلله التسوق"
   },
   "Success": {
     "titleAdd": "تم أضافه المنتج بنجاح",
@@ -283,7 +285,9 @@ static const Map<String,dynamic> _en = {
     "priceLow": "Price (Low to High)",
     "priceHigh": "Price (High to Low)",
     "alphabet": "Alphabetically",
-    "filtering": "تصفية"
+    "filtering": "تصفية",
+    "have": "لديك",
+    "category": "منتجات فى سلله التسوق"
   },
   "Success": {
     "titleAdd": "The product has been added successfully",
