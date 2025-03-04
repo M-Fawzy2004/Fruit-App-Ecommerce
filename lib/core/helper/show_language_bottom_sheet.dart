@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/constant.dart';
 import 'package:e_commerce_app/core/helper/function/custom_snak_bar.dart';
 import 'package:e_commerce_app/core/services/shared_preference_singleton.dart';
+import 'package:e_commerce_app/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ void showLanguageBottomSheet(BuildContext context) {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              "اللغة الحالية: ${currentLanguage == 'ar' ? 'العربية' : 'English'}",
+              "${LocaleKeys.Profile_currentLanguage.tr()} ${currentLanguage == 'ar' ? 'العربية' : 'English'}",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             Divider(),

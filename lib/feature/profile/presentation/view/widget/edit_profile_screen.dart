@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/core/helper/function/get_user.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/feature/profile/presentation/provider/user_provider/user_provider.dart';
+import 'package:e_commerce_app/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:e_commerce_app/core/utils/assets.dart';
@@ -48,7 +50,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'المعلومات الشخصيه :',
+          '${LocaleKeys.Profile_infoAccount.tr()} :',
           style: Styles.fontText16(context),
         ),
         SizedBox(
@@ -79,7 +81,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         SizedBox(
           height: screenHeight * 0.02,
         ),
-        CustomButton(text: 'حفظ التغييرات', onTap: _saveData),
+        CustomButton(
+          text: LocaleKeys.Profile_saveChange.tr(),
+          onTap: _saveData,
+        ),
       ],
     );
   }

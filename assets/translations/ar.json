@@ -155,7 +155,9 @@
     "logout" : "تسجيل الخروج",
     "currentLanguage" : "اللغه الحالية",
     "en" : "English",
-    "ar" : "العربية"
+    "ar" : "العربية",
+    "infoAccount" : "المعلومات الشخصيه",
+    "saveChange" : "حفظ التغييرات"
   },
 
   "ResetPass" : {

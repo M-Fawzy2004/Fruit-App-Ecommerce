@@ -158,7 +158,9 @@ class CodegenLoader extends AssetLoader{
     "logout": "تسجيل الخروج",
     "currentLanguage": "اللغه الحالية",
     "en": "English",
-    "ar": "العربية"
+    "ar": "العربية",
+    "infoAccount": "المعلومات الشخصيه",
+    "saveChange": "حفظ التغييرات"
   },
   "ResetPass": {
     "forgetPass": "نسيت كلمة المرور",
@@ -264,9 +266,9 @@ static const Map<String,dynamic> _en = {
     "priceLow": "Price (Low to High)",
     "priceHigh": "Price (High to Low)",
     "alphabet": "Alphabetically",
-    "filtering": "تصفية",
-    "have": "لديك",
-    "category": "منتجات فى سلله التسوق"
+    "filtering": "Filtering",
+    "have": "Have",
+    "category": "Category To Cart"
   },
   "Success": {
     "titleAdd": "The product has been added successfully",
@@ -322,7 +324,9 @@ static const Map<String,dynamic> _en = {
     "logout": "Logout",
     "currentLanguage": "Current Language",
     "en": "English",
-    "ar": "Arabic"
+    "ar": "Arabic",
+    "infoAccount": "Personal Information",
+    "saveChange": "Save Changes"
   },
   "ResetPass": {
     "forgetPass": "Forgot Password",

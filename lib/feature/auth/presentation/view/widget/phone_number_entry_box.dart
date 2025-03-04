@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/constant.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -45,6 +46,7 @@ class _PhoneNumberEntryBoxState extends State<PhoneNumberEntryBox> {
 
   @override
   Widget build(BuildContext context) {
+    bool isArabic = EasyLocalization.of(context)?.locale.languageCode == 'ar';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -52,8 +54,7 @@ class _PhoneNumberEntryBoxState extends State<PhoneNumberEntryBox> {
           controller: _phoneNumberController,
           focusNode: _phoneNumberFocusNode,
           style: Styles.fontText16(context),
-          textDirection: TextDirection.rtl,
-          textAlign: TextAlign.end,
+          textAlign: isArabic ? TextAlign.end : TextAlign.start,
           decoration: InputDecoration(
             hintText: '10012345678',
             hintStyle: Styles.fontText16(context).copyWith(
@@ -71,26 +72,48 @@ class _PhoneNumberEntryBoxState extends State<PhoneNumberEntryBox> {
             enabledBorder: _methodEnableOutlineBorder(),
             focusedBorder: _methodFocusOutlineBorder(),
             errorText: _errorText.isNotEmpty ? _errorText : null,
-            suffixIcon: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: MediaQuery.sizeOf(context).width * 0.003,
-                    height: MediaQuery.sizeOf(context).height * 0.03,
-                    color: kColorGery,
+            prefixIcon: isArabic
+                ? null
+                : Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          '+20',
+                          style: Styles.fontText16(context),
+                        ),
+                        SizedBox(
+                            width: MediaQuery.sizeOf(context).width * 0.02),
+                        Container(
+                          width: MediaQuery.sizeOf(context).width * 0.003,
+                          height: MediaQuery.sizeOf(context).height * 0.03,
+                          color: kColorGery,
+                        ),
+                      ],
+                    ),
                   ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.02,
-                  ),
-                  Text(
-                    '+20',
-                    style: Styles.fontText16(context),
-                  ),
-                ],
-              ),
-            ),
+            suffixIcon: isArabic
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Container(
+                          width: MediaQuery.sizeOf(context).width * 0.003,
+                          height: MediaQuery.sizeOf(context).height * 0.03,
+                          color: kColorGery,
+                        ),
+                        SizedBox(
+                            width: MediaQuery.sizeOf(context).width * 0.02),
+                        Text(
+                          '+20',
+                          style: Styles.fontText16(context),
+                        ),
+                      ],
+                    ),
+                  )
+                : null,
           ),
           keyboardType: TextInputType.phone,
           inputFormatters: [

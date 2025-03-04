@@ -97,9 +97,9 @@
       "priceLow" : "Price (Low to High)",
       "priceHigh" :"Price (High to Low)",
       "alphabet" : "Alphabetically",
-      "filtering" : "تصفية",
-      "have" : "لديك",
-      "category" : "منتجات فى سلله التسوق"
+      "filtering" : "Filtering",
+      "have" : "Have",
+      "category" : "Category To Cart"
     },
 
     "Success" : {
@@ -159,7 +159,10 @@
     "logout" : "Logout",
     "currentLanguage" : "Current Language",
     "en" : "English",
-    "ar" : "Arabic"
+    "ar" : "Arabic",
+    "infoAccount" : "Personal Information",
+    "saveChange" : "Save Changes"
+
   },
   
   "ResetPass" : {

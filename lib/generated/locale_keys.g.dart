@@ -133,6 +133,8 @@ abstract class  LocaleKeys {
   static const Profile_currentLanguage = 'Profile.currentLanguage';
   static const Profile_en = 'Profile.en';
   static const Profile_ar = 'Profile.ar';
+  static const Profile_infoAccount = 'Profile.infoAccount';
+  static const Profile_saveChange = 'Profile.saveChange';
   static const Profile = 'Profile';
   static const ResetPass_forgetPass = 'ResetPass.forgetPass';
   static const ResetPass_dontWorry = 'ResetPass.dontWorry';
