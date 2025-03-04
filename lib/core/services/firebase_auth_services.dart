@@ -8,6 +8,8 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthServices {
+  FirebaseAuth auth = FirebaseAuth.instance;
+
   // create user
   Future<User> createUserWithEmailAndPassword(
       {required String email, required String password}) async {
@@ -117,6 +119,34 @@ class FirebaseAuthServices {
     } catch (e) {
       print("Error during Facebook sign-in: $e");
       return null;
+    }
+  }
+
+  // verf phone number
+  Future<void> verfPhoneNumber(String phoneNumber) async {
+    try {
+      await FirebaseAuth.instance.verifyPhoneNumber(
+        phoneNumber: phoneNumber,
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await auth.signInWithCredential(credential);
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          if (e.code == 'invalid-phone-number') {
+            print('The provided phone number is not valid.');
+          }
+        },
+        codeSent: (String verificationId, int? resendToken) async {
+          String smsCode = 'xxxx';
+          PhoneAuthCredential credential = PhoneAuthProvider.credential(
+            verificationId: verificationId,
+            smsCode: smsCode,
+          );
+          await auth.signInWithCredential(credential);
+        },
+        codeAutoRetrievalTimeout: (String verificationId) {},
+      );
+    } catch (e) {
+      throw CustomException(message: e.toString());
     }
   }
 

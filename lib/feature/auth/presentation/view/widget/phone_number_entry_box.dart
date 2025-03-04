@@ -1,13 +1,11 @@
-import 'package:e_commerce_app/constant.dart';
-import 'package:e_commerce_app/core/utils/app_styles.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:e_commerce_app/feature/auth/presentation/view/widget/phone_number_form.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class PhoneNumberEntryBox extends StatefulWidget {
   final ValueChanged<String>? onPhoneNumberChanged;
+  final Function(String?)? onSaved;
 
-  const PhoneNumberEntryBox({super.key, this.onPhoneNumberChanged});
+  const PhoneNumberEntryBox({super.key, this.onPhoneNumberChanged, this.onSaved});
 
   @override
   State<PhoneNumberEntryBox> createState() => _PhoneNumberEntryBoxState();
@@ -26,7 +24,7 @@ class _PhoneNumberEntryBoxState extends State<PhoneNumberEntryBox> {
   }
 
   bool _validatePhoneNumber(String phoneNumber) {
-    final RegExp phoneRegex = RegExp(r'^\d{10}$');
+    final RegExp phoneRegex = RegExp(r'^\d{11}$');
     return phoneRegex.hasMatch(phoneNumber);
   }
 
@@ -35,7 +33,7 @@ class _PhoneNumberEntryBoxState extends State<PhoneNumberEntryBox> {
       if (value.isEmpty) {
         _errorText = '';
       } else if (!_validatePhoneNumber(value)) {
-        _errorText = "الرجاء إدخال رقم هاتف صالح مكون من 10 أرقام";
+        _errorText = "الرجاء إدخال رقم هاتف صالح مكون من 11 أرقام";
       } else {
         _errorText = '';
       }
@@ -46,105 +44,11 @@ class _PhoneNumberEntryBoxState extends State<PhoneNumberEntryBox> {
 
   @override
   Widget build(BuildContext context) {
-    bool isArabic = EasyLocalization.of(context)?.locale.languageCode == 'ar';
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        TextField(
-          controller: _phoneNumberController,
-          focusNode: _phoneNumberFocusNode,
-          style: Styles.fontText16(context),
-          textAlign: isArabic ? TextAlign.end : TextAlign.start,
-          decoration: InputDecoration(
-            hintText: '10012345678',
-            hintStyle: Styles.fontText16(context).copyWith(
-              color: Colors.grey,
-            ),
-            fillColor: Theme.of(context).colorScheme.tertiary,
-            filled: true,
-            contentPadding: const EdgeInsets.symmetric(
-              vertical: 12,
-              horizontal: 15,
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            enabledBorder: _methodEnableOutlineBorder(),
-            focusedBorder: _methodFocusOutlineBorder(),
-            errorText: _errorText.isNotEmpty ? _errorText : null,
-            prefixIcon: isArabic
-                ? null
-                : Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          '+20',
-                          style: Styles.fontText16(context),
-                        ),
-                        SizedBox(
-                            width: MediaQuery.sizeOf(context).width * 0.02),
-                        Container(
-                          width: MediaQuery.sizeOf(context).width * 0.003,
-                          height: MediaQuery.sizeOf(context).height * 0.03,
-                          color: kColorGery,
-                        ),
-                      ],
-                    ),
-                  ),
-            suffixIcon: isArabic
-                ? Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Container(
-                          width: MediaQuery.sizeOf(context).width * 0.003,
-                          height: MediaQuery.sizeOf(context).height * 0.03,
-                          color: kColorGery,
-                        ),
-                        SizedBox(
-                            width: MediaQuery.sizeOf(context).width * 0.02),
-                        Text(
-                          '+20',
-                          style: Styles.fontText16(context),
-                        ),
-                      ],
-                    ),
-                  )
-                : null,
-          ),
-          keyboardType: TextInputType.phone,
-          inputFormatters: [
-            FilteringTextInputFormatter.digitsOnly,
-            LengthLimitingTextInputFormatter(10),
-          ],
-          onChanged: _onPhoneNumberChanged,
-        ),
-        SizedBox(
-          height: MediaQuery.sizeOf(context).height * 0.02,
-        ),
-      ],
-    );
-  }
-
-  OutlineInputBorder _methodEnableOutlineBorder() {
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide(
-        color: kColorGery,
-      ),
-    );
-  }
-
-  OutlineInputBorder _methodFocusOutlineBorder() {
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide(
-        color: kColorGery,
-        width: 2,
-      ),
+    return PhoneNumberForm(
+      phoneNumberController: _phoneNumberController,
+      phoneNumberFocusNode: _phoneNumberFocusNode,
+      errorText: _errorText,
+      onPhoneNumberChanged: _onPhoneNumberChanged,
     );
   }
 }

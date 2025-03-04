@@ -52,4 +52,18 @@ class SigninCubit extends Cubit<SigninCubitState> {
       },
     );
   }
+
+  // verfy phone number
+  Future<void> verfPhoneNumber(String phoneNumber) async {
+    emit(SigninCubitLoading());
+    var result = await authRepo.verfPhoneNumber(phoneNumber);
+    result.fold(
+      (failure) {
+        emit(SigninCubitFailure(message: failure.message));
+      },
+      (userEntity) {
+        emit(SigninCubitSuccess(userEntity: userEntity));
+      },
+    );
+  }
 }

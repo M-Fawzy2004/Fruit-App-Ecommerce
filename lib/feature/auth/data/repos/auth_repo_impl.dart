@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
@@ -18,6 +19,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 class AuthRepoImpl extends AuthRepo {
   final FirebaseAuthServices firebaseAuthServices;
   final DataBaseServices dataBaseServices;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
   AuthRepoImpl({
     required this.firebaseAuthServices,
     required this.dataBaseServices,
@@ -42,9 +45,10 @@ class AuthRepoImpl extends AuthRepo {
         name: name,
         email: email,
         uId: user.uid,
+        phoneNumber: user.phoneNumber ?? "",
       );
       await saveUserData(user: userEntity);
-      await addUserData(user : userEntity);
+      await addUserData(user: userEntity);
       return right(userEntity);
     } on CustomException catch (e) {
       await deleteUser(user);
@@ -152,5 +156,58 @@ class AuthRepoImpl extends AuthRepo {
   Future<void> saveUserData({required UserEntity user}) async {
     var jsonDate = jsonEncode(UserModel.fromEntity(user).toMap());
     await Prefs.setString(kUserData, jsonDate);
+  }
+
+  // verf phone number
+  @override
+  Future<Either<Failures, UserEntity>> verfPhoneNumber(
+      String phoneNumber) async {
+    try {
+      final completer = Completer<Either<Failures, String>>();
+
+      await _auth.verifyPhoneNumber(
+        phoneNumber: phoneNumber,
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await _auth.signInWithCredential(credential);
+          completer.complete(
+            left(
+              ServerFailure(message: "تم التحقق تلقائيًا من الرقم"),
+            ),
+          );
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          completer.complete(
+              left(ServerFailure(message: e.message ?? "فشل التحقق من الرقم")));
+        },
+        codeSent: (String verificationId, int? resendToken) {
+          completer.complete(right(verificationId));
+        },
+        codeAutoRetrievalTimeout: (String verificationId) {
+          completer.complete(
+            left(
+              ServerFailure(
+                message: "انتهت مهلة استرجاع الكود تلقائيًا",
+              ),
+            ),
+          );
+        },
+      );
+
+      var userEntity = await getUserData(uid: phoneNumber);
+      await saveUserData(user: userEntity);
+      return right(userEntity);
+    } on FirebaseAuthException catch (e) {
+      return left(
+        ServerFailure(
+          message: e.message ?? "حدث خطأ أثناء التحقق",
+        ),
+      );
+    } catch (e) {
+      return left(
+        ServerFailure(
+          message: "خطأ غير متوقع: ${e.toString()}",
+        ),
+      );
+    }
   }
 }

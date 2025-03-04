@@ -2,13 +2,18 @@ import 'package:e_commerce_app/feature/auth/domain/entities/user_entity.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class UserModel extends UserEntity {
-  UserModel({required super.name, required super.email, required super.uId});
+  UserModel(
+      {required super.name,
+      required super.email,
+      required super.uId,
+      required super.phoneNumber});
 
   factory UserModel.fromFirebaseUser(User user) {
     return UserModel(
       name: user.displayName ?? '',
       email: user.email ?? '',
       uId: user.uid,
+      phoneNumber: user.phoneNumber ?? '',
     );
   }
 
@@ -17,6 +22,7 @@ class UserModel extends UserEntity {
       name: json['name'],
       email: json['email'],
       uId: json['uId'],
+      phoneNumber: json['phoneNumber'],
     );
   }
 
@@ -25,6 +31,7 @@ class UserModel extends UserEntity {
       name: user.name,
       email: user.email,
       uId: user.uId,
+      phoneNumber: user.phoneNumber,
     );
   }
 
@@ -33,6 +40,7 @@ class UserModel extends UserEntity {
       'name': name,
       'email': email,
       'uId': uId,
+      'phoneNumber': phoneNumber,
     };
   }
 }

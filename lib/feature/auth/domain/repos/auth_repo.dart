@@ -17,6 +17,9 @@ abstract class AuthRepo {
   // sign in with facebook
   Future<Either<Failures, UserEntity>> signInWithFacebook();
 
+  // verf phone number
+  Future<Either<Failures, UserEntity>> verfPhoneNumber(String phoneNumber);
+
   // add user data
   Future<void> addUserData({required UserEntity user});
 
