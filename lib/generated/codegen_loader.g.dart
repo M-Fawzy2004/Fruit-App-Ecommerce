@@ -51,25 +51,6 @@ class CodegenLoader extends AssetLoader{
     "haveAccount": "تمتلك حساب بالفعل؟",
     "login": "تسجيل الدخول"
   },
-  "ForgetPassword": {
-    "appBartitle": "نسيت كلمة المرور",
-    "title": "لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق.",
-    "send": "نسيت كلمة المرور"
-  },
-  "PasswordRecovery": {
-    "title": "أدخل الرمز الذي أرسلناه إلى عنوان بريد التاليMaxxx@email.com",
-    "verify": "تحقق من الرمز",
-    "resendCode": "إعادة إرسال الرمز"
-  },
-  "ResetYourPassword": {
-    "title": "قم بإنشاء كلمة مرور جديدة لتسجيل الدخول",
-    "newPassword": "كلمة المرور الجديدة",
-    "confirmPassword": "تاكيد كلمة المرور",
-    "save": "إنشاء كلمة مرور جديدة"
-  },
-  "ChangePassword": {
-    "title": "تم تغيير الباسورد بنجاح"
-  },
   "Validation": {
     "required": "هذا الحقل مطلوب",
     "buildSnakBar": "يجب الموافقة على الشروط والأحكام"
@@ -178,6 +159,20 @@ class CodegenLoader extends AssetLoader{
     "currentLanguage": "اللغه الحالية",
     "en": "English",
     "ar": "العربية"
+  },
+  "ResetPass": {
+    "forgetPass": "نسيت كلمة المرور",
+    "dontWorry": "لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق.",
+    "inputEmail": "ادخل البريد الالكتروني لتعيين كلمه المرور",
+    "enterEmail": "إادخال البريد الالكتروني",
+    "enterCode": "أدخل كود التحقق المرسل إليك علي الهاتف",
+    "checkPin": "تحقق من رمز",
+    "resentCode": "اعادة ارسال الكود",
+    "newPass": "كلمه المرور الجديده",
+    "createPass": "انشاء كلمه مرور جديده",
+    "ensurePass": "تأكيد كلمه المرور",
+    "savePass": "حفظ كلمه المرور",
+    "sureCompleteData": "يرجى ملء جميع الخلايا بشكل صحيح"
   }
 };
 static const Map<String,dynamic> _en = {
@@ -216,22 +211,6 @@ static const Map<String,dynamic> _en = {
     "register": "Create Account",
     "haveAccount": "Already have an account?",
     "login": "Login"
-  },
-  "ForgetPassword": {
-    "appBartitle": "Forgot Password",
-    "title": "Don’t worry, just enter your phone number, and we’ll send you a verification code.",
-    "send": "Forgot Password"
-  },
-  "PasswordRecovery": {
-    "title": "Enter the code we sent to the following emailMaxxx@email.com",
-    "verify": "Verify Code",
-    "resendCode": "Resend Code"
-  },
-  "ResetYourPassword": {
-    "title": "Create a new password to log in",
-    "newPassword": "New Password",
-    "confirmPassword": "Confirm Password",
-    "save": "Create New Password"
   },
   "ChangePassword": {
     "title": "Password Changed Successfully"
@@ -344,6 +323,20 @@ static const Map<String,dynamic> _en = {
     "currentLanguage": "Current Language",
     "en": "English",
     "ar": "Arabic"
+  },
+  "ResetPass": {
+    "forgetPass": "Forgot Password",
+    "dontWorry": "Don't worry, just enter your phone number and we will send a verification code.",
+    "inputEmail": "Enter your email to reset your password",
+    "enterEmail": "Enter Email",
+    "enterCode": "Enter the verification code sent to your phone",
+    "checkPin": "Verify Code",
+    "resentCode": "Resend Code",
+    "newPass": "New Password",
+    "createPass": "Create a New Password",
+    "ensurePass": "Confirm Password",
+    "savePass": "Save Password",
+    "sureCompleteData": "Please fill in all cells correctly."
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};

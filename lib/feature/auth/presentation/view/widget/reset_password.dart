@@ -2,6 +2,8 @@ import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/core/widget/custom_button.dart';
 import 'package:e_commerce_app/core/widget/product_view_header.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/widget/custom_form_text_field.dart';
+import 'package:e_commerce_app/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ResetPassword extends StatelessWidget {
@@ -15,7 +17,7 @@ class ResetPassword extends StatelessWidget {
           child: ProductViewHeader(
             isVisible: true,
             isVisibleNotification: false,
-            title: 'كلمة مرور جديدة',
+            title: LocaleKeys.ResetPass_newPass.tr(),
           ),
         ),
         SliverToBoxAdapter(
@@ -25,7 +27,7 @@ class ResetPassword extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: Text(
-            'قم بإنشاء كلمة مرور جديدة لتسجيل الدخول',
+            LocaleKeys.ResetPass_createPass.tr(),
             style: Styles.fontText16(context),
           ),
         ),
@@ -38,14 +40,14 @@ class ResetPassword extends StatelessWidget {
           child: Column(
             children: [
               CustomTextFormField(
-                hintText: 'إنشاء كلمة مرور جديدة',
+                hintText: LocaleKeys.ResetPass_newPass.tr(),
                 isPassword: true,
               ),
               SizedBox(
                 height: MediaQuery.sizeOf(context).height * 0.01,
               ),
               CustomTextFormField(
-                hintText: 'تاكيد كلمة المرور',
+                hintText: LocaleKeys.ResetPass_savePass.tr(),
                 isPassword: true,
               ),
             ],
@@ -58,7 +60,7 @@ class ResetPassword extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: CustomButton(
-            text: 'إنشاء كلمة مرور جديدة',
+            text: LocaleKeys.ResetPass_newPass.tr(),
             onTap: () {},
           ),
         ),

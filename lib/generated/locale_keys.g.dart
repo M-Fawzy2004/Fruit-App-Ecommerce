@@ -35,21 +35,6 @@ abstract class  LocaleKeys {
   static const SignUp_haveAccount = 'SignUp.haveAccount';
   static const SignUp_login = 'SignUp.login';
   static const SignUp = 'SignUp';
-  static const ForgetPassword_appBartitle = 'ForgetPassword.appBartitle';
-  static const ForgetPassword_title = 'ForgetPassword.title';
-  static const ForgetPassword_send = 'ForgetPassword.send';
-  static const ForgetPassword = 'ForgetPassword';
-  static const PasswordRecovery_title = 'PasswordRecovery.title';
-  static const PasswordRecovery_verify = 'PasswordRecovery.verify';
-  static const PasswordRecovery_resendCode = 'PasswordRecovery.resendCode';
-  static const PasswordRecovery = 'PasswordRecovery';
-  static const ResetYourPassword_title = 'ResetYourPassword.title';
-  static const ResetYourPassword_newPassword = 'ResetYourPassword.newPassword';
-  static const ResetYourPassword_confirmPassword = 'ResetYourPassword.confirmPassword';
-  static const ResetYourPassword_save = 'ResetYourPassword.save';
-  static const ResetYourPassword = 'ResetYourPassword';
-  static const ChangePassword_title = 'ChangePassword.title';
-  static const ChangePassword = 'ChangePassword';
   static const Validation_required = 'Validation.required';
   static const Validation_buildSnakBar = 'Validation.buildSnakBar';
   static const Validation = 'Validation';
@@ -149,5 +134,18 @@ abstract class  LocaleKeys {
   static const Profile_en = 'Profile.en';
   static const Profile_ar = 'Profile.ar';
   static const Profile = 'Profile';
+  static const ResetPass_forgetPass = 'ResetPass.forgetPass';
+  static const ResetPass_dontWorry = 'ResetPass.dontWorry';
+  static const ResetPass_inputEmail = 'ResetPass.inputEmail';
+  static const ResetPass_enterEmail = 'ResetPass.enterEmail';
+  static const ResetPass_enterCode = 'ResetPass.enterCode';
+  static const ResetPass_checkPin = 'ResetPass.checkPin';
+  static const ResetPass_resentCode = 'ResetPass.resentCode';
+  static const ResetPass_newPass = 'ResetPass.newPass';
+  static const ResetPass_createPass = 'ResetPass.createPass';
+  static const ResetPass_ensurePass = 'ResetPass.ensurePass';
+  static const ResetPass_savePass = 'ResetPass.savePass';
+  static const ResetPass_sureCompleteData = 'ResetPass.sureCompleteData';
+  static const ResetPass = 'ResetPass';
 
 }

@@ -39,25 +39,6 @@
       "login": "Login"
     },
   
-    "ForgetPassword": {
-      "appBartitle": "Forgot Password",
-      "title": "Don’t worry, just enter your phone number, and we’ll send you a verification code.",
-      "send": "Forgot Password"
-    },
-  
-    "PasswordRecovery": {
-      "title": "Enter the code we sent to the following emailMaxxx@email.com",
-      "verify": "Verify Code",
-      "resendCode": "Resend Code"
-    },
-  
-    "ResetYourPassword": {
-      "title": "Create a new password to log in",
-      "newPassword": "New Password",
-      "confirmPassword": "Confirm Password",
-      "save": "Create New Password"
-    },
-  
     "ChangePassword": {
       "title": "Password Changed Successfully"
     },
@@ -179,7 +160,22 @@
     "currentLanguage" : "Current Language",
     "en" : "English",
     "ar" : "Arabic"
+  },
+  
+  "ResetPass" : {
+    "forgetPass" : "Forgot Password",
+    "dontWorry" : "Don't worry, just enter your phone number and we will send a verification code.",
+    "inputEmail" : "Enter your email to reset your password",
+    "enterEmail" : "Enter Email",
+    "enterCode" : "Enter the verification code sent to your phone",
+    "checkPin" : "Verify Code",
+    "resentCode" : "Resend Code",
+    "newPass" : "New Password",
+    "createPass" : "Create a New Password",
+    "ensurePass" : "Confirm Password",
+    "savePass" : "Save Password",
+    "sureCompleteData" : "Please fill in all cells correctly."
   }
-    
+
 }
   

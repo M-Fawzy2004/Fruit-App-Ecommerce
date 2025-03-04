@@ -3,6 +3,8 @@ import 'package:e_commerce_app/core/widget/custom_button.dart';
 import 'package:e_commerce_app/core/widget/product_view_header.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/widget/custom_form_text_field.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/widget/phone_number_entry_box.dart';
+import 'package:e_commerce_app/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPasswordView extends StatelessWidget {
@@ -17,7 +19,7 @@ class ForgetPasswordView extends StatelessWidget {
           child: ProductViewHeader(
             isVisible: true,
             isVisibleNotification: false,
-            title: 'نسيت كلمة المرور',
+            title: LocaleKeys.ResetPass_forgetPass.tr(),
           ),
         ),
         SliverToBoxAdapter(
@@ -27,7 +29,7 @@ class ForgetPasswordView extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: Text(
-            'لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق.',
+            LocaleKeys.ResetPass_dontWorry.tr(),
             style: Styles.fontText16(context),
           ),
         ),
@@ -41,7 +43,7 @@ class ForgetPasswordView extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: Text(
-            'أدخل البريد الالكتروني لتعيين كلمه السر',
+            LocaleKeys.ResetPass_inputEmail.tr(),
             style: Styles.fontText13(context),
           ),
         ),
@@ -53,7 +55,7 @@ class ForgetPasswordView extends StatelessWidget {
         SliverToBoxAdapter(
           child: CustomTextFormField(
             isPassword: false,
-            hintText: 'ادخل البريد الالكتروني',
+            hintText: LocaleKeys.ResetPass_enterEmail.tr(),
           ),
         ),
         SliverToBoxAdapter(
@@ -63,7 +65,7 @@ class ForgetPasswordView extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: CustomButton(
-            text: 'نسيت كلمة المرور',
+            text: LocaleKeys.ResetPass_forgetPass.tr(),
             onTap: () {},
           ),
         ),

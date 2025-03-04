@@ -2,6 +2,8 @@ import 'package:e_commerce_app/core/helper/function/custom_snak_bar.dart';
 import 'package:e_commerce_app/core/utils/app_styles.dart';
 import 'package:e_commerce_app/core/widget/custom_button.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/widget/pin_code_input_field.dart';
+import 'package:e_commerce_app/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
@@ -30,12 +32,13 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
         SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.03,
         ),
-        Align(
-          alignment: Alignment.centerRight,
-          child: Text(
-            'ادخل كود التحقق المرسل لك علي الهاتف',
-            style: Styles.fontText16(context),
-          ),
+        Row(
+          children: [
+            Text(
+              LocaleKeys.ResetPass_enterCode.tr(),
+              style: Styles.fontText16(context),
+            ),
+          ],
         ),
         SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.03,
@@ -48,7 +51,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
           height: MediaQuery.sizeOf(context).height * 0.03,
         ),
         CustomButton(
-          text: 'تحقق من الرمز',
+          text: LocaleKeys.ResetPass_checkPin.tr(),
           onTap: () {
             if (formKey.currentState!.validate()) {
               if (currentText.length != 4 || currentText != "1234") {
@@ -69,7 +72,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
         GestureDetector(
           onTap: () {},
           child: Text(
-            "إعاده إرسال الرمز",
+            LocaleKeys.ResetPass_resentCode.tr(),
             style: Styles.fontText16(context).copyWith(
               color: Color(0xff2D9F5D),
             ),
@@ -84,7 +87,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 10.0),
               child: Text(
-                "*يرجى ملء جميع الخلايا بشكل صحيح",
+                LocaleKeys.ResetPass_sureCompleteData.tr(),
                 style: Styles.fontText13(context).copyWith(
                   color: Colors.red,
                 ),
