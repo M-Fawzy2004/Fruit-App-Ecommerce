@@ -52,8 +52,13 @@ class _PhoneNumberEntryBoxState extends State<PhoneNumberEntryBox> {
           controller: _phoneNumberController,
           focusNode: _phoneNumberFocusNode,
           style: Styles.fontText16(context),
-          textDirection: TextDirection.ltr,
+          textDirection: TextDirection.rtl,
+          textAlign: TextAlign.end,
           decoration: InputDecoration(
+            hintText: '10012345678',
+            hintStyle: Styles.fontText16(context).copyWith(
+              color: Colors.grey,
+            ),
             fillColor: Theme.of(context).colorScheme.tertiary,
             filled: true,
             contentPadding: const EdgeInsets.symmetric(

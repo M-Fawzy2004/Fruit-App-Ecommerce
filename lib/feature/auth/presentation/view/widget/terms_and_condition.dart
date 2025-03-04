@@ -20,20 +20,15 @@ class TermsAndCondition extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        // check box
         CustomCheckBox(
           isChecker: isAccepted,
           onChanged: (bool value) {
             onChanged(value);
           },
         ),
-
-        // size box width
         SizedBox(
           width: MediaQuery.sizeOf(context).width * 0.04,
         ),
-
-        // size box height and text rich
         textWidget != null
             ? textWidget!
             : SizedBox(
@@ -46,8 +41,6 @@ class TermsAndCondition extends StatelessWidget {
                         text: LocaleKeys.SignUp_agreeText1.tr(),
                         style: Styles.fontText13(context),
                       ),
-
-                      // text span 2
                       TextSpan(
                         text: LocaleKeys.SignUp_agreeText2.tr(),
                         style: Styles.fontText13(context).copyWith(
