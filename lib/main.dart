@@ -40,7 +40,6 @@ void main() async {
         path: 'assets/translations',
         fallbackLocale: const Locale('ar'),
         assetLoader: const CodegenLoader(),
-        // startLocale: const Locale('ar'),
         child: MultiProvider(
           providers: [
             ChangeNotifierProvider(create: (_) => ThemeAppProvider()),
