@@ -23,61 +23,65 @@ class _ProfileSectionState extends State<ProfileSection> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.sizeOf(context).height;
-    return Column(
-      children: [
-        ProfileItem(
-          onTap: () =>
-              Navigator.pushNamed(context, ProfileSettingView.routeName),
-          text: LocaleKeys.Profile_profile.tr(),
-          image: Assets.imagesUser,
-          imageIcon: Assets.imagesArrowVector,
-          isIcon: true,
-          isSwitched: false,
-        ),
-        SizedBox(height: screenHeight * .005),
-        ProfileItem(
-          onTap: () => Navigator.pushNamed(context, OrderView.routeName),
-          text: LocaleKeys.Profile_order.tr(),
-          image: Assets.imagesBox,
-          imageIcon: Assets.imagesArrowVector,
-          isIcon: true,
-          isSwitched: false,
-        ),
-        SizedBox(height: screenHeight * .005),
-        ProfileItem(
-          onTap: () => Navigator.pushNamed(context, FavouriteView.routeName),
-          text: LocaleKeys.Profile_favorite.tr(),
-          image: Assets.imagesHeart,
-          imageIcon: Assets.imagesArrowVector,
-          isIcon: true,
-          isSwitched: false,
-        ),
-        SizedBox(height: screenHeight * .005),
-        ProfileItem(
-          text: LocaleKeys.Profile_notification.tr(),
-          image: Assets.imagesNotf,
-          imageIcon: Assets.imagesArrowVector,
-          isSwitched: isNotificationsOn,
-          onChanged: (val) {
-            setState(() {
-              isNotificationsOn = val;
-            });
-          },
-          isIcon: false,
-        ),
-        SizedBox(height: screenHeight * .005),
-        ProfileItem(
-          onTap: () => showLanguageBottomSheet(context),
-          text: LocaleKeys.Profile_language.tr(),
-          image: Assets.imagesGlobal,
-          imageIcon: Assets.imagesArrowVector,
-          isIcon: true,
-          isSwitched: false,
-        ),
-        SizedBox(height: screenHeight * .005),
-        Consumer<ThemeAppProvider>(
-          builder: (context, themeProvider, child) {
-            return ProfileItem(
+    return Consumer<ThemeAppProvider>(
+      builder: (context, themeProvider, child) {
+        return Column(
+          children: [
+            ProfileItem(
+              onTap: () =>
+                  Navigator.pushNamed(context, ProfileSettingView.routeName),
+              text: LocaleKeys.Profile_profile.tr(),
+              image: Assets.imagesUser,
+              imageIcon: Assets.imagesArrowVector,
+              isIcon: true,
+              isSwitched: false,
+            ),
+            SizedBox(height: screenHeight * .005),
+            ProfileItem(
+              onTap: () => Navigator.pushNamed(context, OrderView.routeName),
+              text: LocaleKeys.Profile_order.tr(),
+              image: Assets.imagesBox,
+              imageIcon: Assets.imagesArrowVector,
+              isIcon: true,
+              isSwitched: false,
+            ),
+            SizedBox(height: screenHeight * .005),
+            ProfileItem(
+              onTap: () =>
+                  Navigator.pushNamed(context, FavouriteView.routeName),
+              text: LocaleKeys.Profile_favorite.tr(),
+              image: Assets.imagesHeart,
+              imageIcon: Assets.imagesArrowVector,
+              isIcon: true,
+              isSwitched: false,
+            ),
+            SizedBox(height: screenHeight * .005),
+            ProfileItem(
+              text: LocaleKeys.Profile_notification.tr(),
+              image: Assets.imagesNotf,
+              imageIcon: Assets.imagesArrowVector,
+              isSwitched: isNotificationsOn,
+              onChanged: (val) {
+                setState(() {
+                  isNotificationsOn = val;
+                });
+              },
+              isIcon: false,
+            ),
+            SizedBox(height: screenHeight * .005),
+            ProfileItem(
+              onTap: () async {
+                showLanguageBottomSheet(context);
+                setState(() {});
+              },
+              text: LocaleKeys.Profile_language.tr(),
+              image: Assets.imagesGlobal,
+              imageIcon: Assets.imagesArrowVector,
+              isIcon: true,
+              isSwitched: false,
+            ),
+            SizedBox(height: screenHeight * .005),
+            ProfileItem(
               text: LocaleKeys.Profile_darkMode.tr(),
               image: Assets.imagesMagicpen,
               imageIcon: Assets.imagesArrowVector,
@@ -86,10 +90,10 @@ class _ProfileSectionState extends State<ProfileSection> {
                 themeProvider.toggleTheme();
               },
               isIcon: false,
-            );
-          },
-        ),
-      ],
+            ),
+          ],
+        );
+      },
     );
   }
 }

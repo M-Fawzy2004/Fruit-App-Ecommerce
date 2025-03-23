@@ -38,7 +38,9 @@ void main() async {
       builder: (context) => EasyLocalization(
         supportedLocales: const [Locale('en'), Locale('ar')],
         path: 'assets/translations',
-        fallbackLocale: const Locale('ar'),
+        // fallbackLocale: const Locale('ar'),
+        saveLocale: true,
+        startLocale: const Locale('ar'),
         assetLoader: const CodegenLoader(),
         child: MultiProvider(
           providers: [
@@ -54,9 +56,11 @@ void main() async {
 
 class FruitHub extends StatelessWidget {
   const FruitHub({super.key});
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = context.watch<ThemeAppProvider>();
+
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -70,7 +74,7 @@ class FruitHub extends StatelessWidget {
     return MaterialApp(
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
-      locale: context.deviceLocale,
+      locale: context.locale, 
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
